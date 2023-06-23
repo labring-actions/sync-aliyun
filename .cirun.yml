@@ -1,14 +1,12 @@
 runners:
-  - name: "gcp-amd64"
+  - name: "cirun-gcp-amd64"
     cloud: "gcp"
     machine_image: "sealos-dev:cirun-action"  # YOUR-PROJECT-NAME:MACHINE-IMAGE-NAME
     instance_type:
       - "e2-highmem-2"
       - "e2-custom-2-8192"
     labels:
-      - "cirun-google-amd64-2c-16g"
-      - "hongkong"
-      - "cirun"
+      - "cirun-gcp-amd64"
     region:
       - "asia-east2-a"
       - "asia-east2-b"
