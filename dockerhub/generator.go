@@ -34,7 +34,7 @@ const tmpl = `docker.io:
   tls-verify: false
 `
 
-const workflowTmpl = `name: skopeo-sync
+const workflowTmpl = `name: skopeo-sync for {{ .PREFIX }} 
 on:
   push:
     branches: [ main ]

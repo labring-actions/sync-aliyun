@@ -15,8 +15,7 @@ env:
 
 jobs:
   image-sync:
-    runs-on: ubuntu-22.04
-
+    runs-on: "gcp-amd64--${{ github.run_id }}"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
