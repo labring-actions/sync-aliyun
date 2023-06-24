@@ -8,6 +8,5 @@ docker.io:
     labring/contour: [ ]
     labring/harbor: [ ]
     labring/sealos-auth-service: [ ]
-    labring/sealos: [ ]
     labring/gloo: [ ]
   tls-verify: false
