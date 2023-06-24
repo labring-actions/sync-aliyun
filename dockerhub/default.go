@@ -36,6 +36,11 @@ func Do(syncDir string) {
 		logger.Error("fetchDockerHubAllRepo error %s", err.Error())
 		return
 	}
+	data, err := getCIRun(".cirun.yml")
+	if err != nil {
+		logger.Error("getCIRun error %s", err.Error())
+		return
+	}
 	logger.Info("get docker hub all repo success")
 	for k, v := range got {
 		err = generatorSyncFile(syncDir, k, v)
@@ -43,7 +48,7 @@ func Do(syncDir string) {
 			logger.Error("generatorSyncFile %s error %s", k, err.Error())
 			continue
 		}
-		err = generatorWorkflowFile(workflowDir, syncDir, k)
+		err = generatorWorkflowFile(workflowDir, syncDir, k, data)
 		if err != nil {
 			logger.Error("generatorWorkflowFile %s error %s", k, err.Error())
 			continue

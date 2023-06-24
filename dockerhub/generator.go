@@ -19,6 +19,7 @@ package dockerhub
 import (
 	"fmt"
 	"github.com/cuisongliu/logger"
+	"gopkg.in/yaml.v2"
 	"html/template"
 	"os"
 	"path"
@@ -51,7 +52,7 @@ env:
 
 jobs:
   image-sync:
-    runs-on: ubuntu-22.04
+    runs-on: {{.RUN_ON}}
 
     steps:
       - name: Checkout
@@ -106,7 +107,49 @@ func generatorSyncFile(dir, key string, repos []string) error {
 	return nil
 }
 
-func generatorWorkflowFile(dir, syncDir, key string) error {
+func getCIRun(file string) ([]string, error) {
+	type Runner struct {
+		Name         string   `yaml:"name"`
+		Cloud        string   `yaml:"cloud"`
+		MachineImage string   `yaml:"machine_image"`
+		InstanceType []string `yaml:"instance_type"`
+		Labels       []string `yaml:"labels"`
+		Region       []string `yaml:"region"`
+	}
+
+	type Config struct {
+		Runners []Runner `yaml:"runners"`
+	}
+
+	data, err := os.ReadFile(file) //replace with your config file
+	if err != nil {
+		if os.IsNotExist(err) {
+			return nil, nil
+		}
+		return nil, err
+	}
+
+	var config Config
+
+	err = yaml.Unmarshal(data, &config)
+	if err != nil {
+		return nil, err
+	}
+	if len(config.Runners) == 0 {
+		return nil, fmt.Errorf("not found runners")
+	}
+	if len(config.Runners[0].Labels) == 0 {
+		return nil, fmt.Errorf("not found labels")
+	}
+	for _, label := range config.Runners[0].Labels {
+		if !strings.HasPrefix(label, "cirun") {
+			return nil, fmt.Errorf("not found cirun labels, must has prefix %s", "cirun")
+		}
+	}
+	return config.Runners[0].Labels, nil
+}
+
+func generatorWorkflowFile(dir, syncDir, key string, labels []string) error {
 	syncFile := path.Join(syncDir, fmt.Sprintf("%s-%s.yaml", prefix, key))
 	f, err := os.Create(path.Join(dir, fmt.Sprintf("%s-%s.yaml", prefix, key)))
 	if err != nil {
@@ -115,9 +158,15 @@ func generatorWorkflowFile(dir, syncDir, key string) error {
 	defer f.Close()
 	t := template.Must(template.New("repos").Parse(workflowTmpl))
 
+	runOn := "ubuntu-22.04"
+	if len(labels) > 0 {
+		runOn = labels[0]
+	}
+
 	err = t.Execute(f, map[string]string{
 		"PREFIX":         prefix,
 		"SYNC_FILE":      syncFile,
+		"RUN_ON":         runOn,
 		"USER_KEY":       "${{ vars.A_REGISTRY_USERNAME }}",
 		"PASSWORD_KEY":   "${{ secrets.A_REGISTRY_TOKEN }}",
 		"REGISTRY_KEY":   "${{ vars.A_REGISTRY_NAME }}",

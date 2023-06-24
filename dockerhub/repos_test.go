@@ -45,7 +45,7 @@ func TestFetchDockerHubAllVersion(t *testing.T) {
 			t.Errorf("generatorSyncFile %s error %s", k, err.Error())
 			continue
 		}
-		err = generatorWorkflowFile("../.github/workflows", "skopeo", k)
+		err = generatorWorkflowFile("../.github/workflows", "skopeo", k, nil)
 		if err != nil {
 			t.Errorf("generatorWorkflowFile %s error %s", k, err.Error())
 			continue
