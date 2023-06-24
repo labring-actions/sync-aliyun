@@ -4,7 +4,7 @@ runners:
     machine_image: "sealos-dev:cirun-action-podman"  # YOUR-PROJECT-NAME:MACHINE-IMAGE-NAME
     instance_type:
       - "e2-highmem-2"
-      - "e2-custom-2-8192"
+      - "e2-custom-2-16384"
     labels:
       - "cirun-gcp-amd64"
     region:
