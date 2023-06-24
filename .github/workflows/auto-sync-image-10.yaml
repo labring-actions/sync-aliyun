@@ -1,10 +1,10 @@
-name: skopeo-sync for auto-sync 
+name: skopeo-sync for skopeo/auto-sync-image-10.yaml 
 on:
   push:
     branches: [ main ]
     paths:
-      - "skopeo/auto-sync*"
-      - ".github/workflows/auto-sync*"
+      - "skopeo/auto-sync-image-10.yaml"
+      - ".github/workflows/auto-sync-image-10.yaml"
   schedule:
     - cron: '0 16 * * *'
   workflow_dispatch:

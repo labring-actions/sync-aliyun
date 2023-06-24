@@ -1,13 +1,12 @@
 docker.io:
   images:
-    labring/kube-vip: [ ]
-    labring/openebs-lvm: [ ]
-    labring/bitnami-redis-cluster: [ ]
-    labring/nerdctl: [ ]
-    labring/ot-redis-cluster: [ ]
-    labring/karmada: [ ]
-    labring/registry: [ ]
-    labring/helmfile: [ ]
-    labring/docker-terminal: [ ]
-    labring/sealos-patch: [ ]
+    labring/kube-vip: []
+    labring/openebs-lvm: []
+    labring/bitnami-redis-cluster: []
+    labring/nerdctl: []
+    labring/ot-redis-cluster: []
+    labring/karmada: []
+    labring/registry: []
+    labring/helmfile: []
+    labring/docker-terminal: []
   tls-verify: false
