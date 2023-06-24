@@ -25,9 +25,46 @@ import (
 )
 
 type RepoInfo struct {
-	Name         string   `json:"name"`
-	Versions     []string `json:"versions"`
-	FixedVersion bool     `json:"fixed_version"`
+	Name     string   `json:"name"`
+	Versions []string `json:"versions"`
+	Filter   string   `json:"filter"`
+}
+
+type FilterStrateg string
+
+const (
+	FilterStrategyNone     FilterStrateg = "none"
+	FilterStrategyPrefix   FilterStrateg = "prefix"
+	FilterStrategySuffix   FilterStrateg = "suffix"
+	FilterStrategyContains FilterStrateg = "contains"
+	FilterStrategyEquals   FilterStrateg = "equals"
+	FilterStrategyAll      FilterStrateg = "all"
+)
+
+func filter(filter string) (FilterStrateg, error) {
+	if filter == "" {
+		return FilterStrategyAll, nil
+	}
+	if strings.Contains(filter, "*") {
+		if filter[0] == '*' && filter[len(filter)-1] == '*' {
+			return FilterStrategyContains, nil
+		}
+		if filter[0] == '*' {
+			if strings.LastIndex(filter, "*") == 0 {
+				return FilterStrategySuffix, nil
+			}
+			return FilterStrategyNone, fmt.Errorf("your filter must has one char '*' , example *ccc ")
+		}
+		if filter[len(filter)-1] == '*' {
+			if strings.LastIndex(filter, "*") == len(filter)-1 {
+				return FilterStrategyPrefix, nil
+			}
+			return FilterStrategyNone, fmt.Errorf("your filter must has one char '*' , example ccc* ")
+		}
+		return FilterStrategyNone, fmt.Errorf("not spport char '*' in filter middle")
+	} else {
+		return FilterStrategyEquals, nil
+	}
 }
 
 func (r *RepoInfo) GetVersions() []string {
@@ -57,7 +94,30 @@ func (r *RepoInfo) GetVersions() []string {
 				if strings.HasSuffix(tag.Name, "-arm64") {
 					continue
 				}
-				tagSet = tagSet.Insert(tag.Name)
+				s, _ := filter(r.Filter)
+				switch s {
+				case FilterStrategyAll:
+					tagSet = tagSet.Insert(tag.Name)
+				case FilterStrategyPrefix:
+					if strings.HasPrefix(tag.Name, strings.TrimRight(r.Filter, "*")) {
+						tagSet = tagSet.Insert(tag.Name)
+					}
+				case FilterStrategySuffix:
+					if strings.HasSuffix(tag.Name, strings.TrimLeft(r.Filter, "*")) {
+						tagSet = tagSet.Insert(tag.Name)
+					}
+				case FilterStrategyContains:
+					if strings.Contains(tag.Name, strings.Trim(r.Filter, "*")) {
+						tagSet = tagSet.Insert(tag.Name)
+					}
+				case FilterStrategyEquals:
+					if tag.Name == r.Filter {
+						tagSet = tagSet.Insert(tag.Name)
+					}
+				case FilterStrategyNone:
+					logger.Error("filter error: %s", err.Error())
+				}
+
 			}
 			fetchURL = tags.Next
 		}
@@ -103,10 +163,10 @@ func fetchDockerHubAllRepo() (map[string][]RepoInfo, error) {
 					versions[repo.Name] = []RepoInfo{
 						{Name: repo.Name},
 					}
-				} else if strings.HasPrefix(repo.Name, "sealos-cloud") {
+				} else if strings.HasPrefix(repo.Name, "sealos") {
 					if repo.Name == "sealos-patch" || strings.HasPrefix(repo.Name, "sealos-cloud") || repo.Name == "sealos" {
 						versions[repo.Name] = []RepoInfo{
-							{Name: repo.Name},
+							{Name: repo.Name, Filter: "v*"},
 						}
 					}
 					logger.Warn("sealos container image repo is deprecated, please use sealos cloud repo")
