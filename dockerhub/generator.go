@@ -40,8 +40,8 @@ on:
   push:
     branches: [ main ]
     paths:
-      - "skopeo/{{ .PREFIX }}*"
-      - ".github/workflows/{{ .PREFIX }}*"
+      - "skopeo/{{ .SYNC_FILE }}"
+      - ".github/workflows/{{ .SYNC_FILE }}"
   schedule:
     - cron: '0 16 * * *'
   workflow_dispatch:
