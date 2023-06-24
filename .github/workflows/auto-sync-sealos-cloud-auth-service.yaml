@@ -1,4 +1,4 @@
-name: skopeo-sync for skopeo/auto-sync-sealos-cloud-auth-service.yaml 
+name: auto-sync-sealos-cloud-auth-service.yaml 
 on:
   push:
     branches: [ main ]

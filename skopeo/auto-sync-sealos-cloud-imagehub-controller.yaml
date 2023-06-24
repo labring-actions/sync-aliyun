@@ -1,4 +1,4 @@
 docker.io:
-  images:
-    labring/sealos-cloud-imagehub-controller: []
+  images-by-tag-regex:
+    labring/sealos-cloud-imagehub-controller: ^v.*
   tls-verify: false

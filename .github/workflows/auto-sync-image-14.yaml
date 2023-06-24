@@ -1,4 +1,4 @@
-name: skopeo-sync for skopeo/auto-sync-image-14.yaml 
+name: auto-sync-image-14.yaml 
 on:
   push:
     branches: [ main ]

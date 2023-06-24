@@ -1,4 +1,4 @@
-name: skopeo-sync for skopeo/auto-sync-kubernetes-crio.yaml 
+name: auto-sync-kubernetes-crio.yaml 
 on:
   push:
     branches: [ main ]
