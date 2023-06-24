@@ -40,8 +40,8 @@ on:
   push:
     branches: [ main ]
     paths:
-      - "skopeo/{{ .SYNC_FILE }}"
-      - ".github/workflows/{{ .SYNC_FILE }}"
+      - "{{ .SYNC_FILE }}"
+      - ".github/workflows/{{ .SYNC_FILE_NAME }}"
   schedule:
     - cron: '0 16 * * *'
   workflow_dispatch:
@@ -150,7 +150,8 @@ func getCIRun(file string) ([]string, error) {
 }
 
 func generatorWorkflowFile(dir, syncDir, key string, labels []string) error {
-	syncFile := path.Join(syncDir, fmt.Sprintf("%s-%s.yaml", prefix, key))
+	syncFileName := fmt.Sprintf("%s-%s.yaml", prefix, key)
+	syncFile := path.Join(syncDir, syncFileName)
 	f, err := os.Create(path.Join(dir, fmt.Sprintf("%s-%s.yaml", prefix, key)))
 	if err != nil {
 		return err
@@ -166,6 +167,7 @@ func generatorWorkflowFile(dir, syncDir, key string, labels []string) error {
 	err = t.Execute(f, map[string]string{
 		"PREFIX":         prefix,
 		"SYNC_FILE":      syncFile,
+		"SYNC_FILE_NAME": syncFileName,
 		"RUN_ON":         runOn,
 		"USER_KEY":       "${{ vars.A_REGISTRY_USERNAME }}",
 		"PASSWORD_KEY":   "${{ secrets.A_REGISTRY_TOKEN }}",
