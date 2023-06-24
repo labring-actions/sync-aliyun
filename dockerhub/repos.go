@@ -20,6 +20,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/cuisongliu/logger"
+	"strings"
 )
 
 type Repositories struct {
@@ -51,6 +52,8 @@ func fetchDockerHubAllRepo() (map[string][]string, error) {
 			newRepos := make([]string, 0)
 			for _, repo := range repositories.Results {
 				if stringInSlice(repo.Name, specialRepos) {
+					versions[repo.Name] = []string{repo.Name}
+				} else if strings.HasPrefix(repo.Name, "sealos") {
 					versions[repo.Name] = []string{repo.Name}
 				} else {
 					newRepos = append(newRepos, repo.Name)
