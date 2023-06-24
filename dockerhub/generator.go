@@ -27,11 +27,17 @@ import (
 	"strings"
 )
 
-const tmpl = `#count: {{.Count}}
-docker.io:
+const tmpl = `docker.io:
   images:
     {{- range .Repos }}
     labring/{{ .Name }}: []
+    {{- end }}
+  tls-verify: false
+`
+const k8stmpl = `docker.io:
+  images-by-tag-regex:
+    {{- range .Repos }}
+    labring/{{ .Name }}: ^v(1\.2[0-9]\.[1-9]?[0-9]?)(\.)?(-(4\.[1-9]\.[5-9]))?(-(amd64|arm64))?$
     {{- end }}
   tls-verify: false
 `
@@ -98,15 +104,23 @@ func generatorSyncFile(dir, key string, repos []RepoInfo) error {
 		return err
 	}
 	defer f.Close()
-	t := template.Must(template.New("repos").Parse(tmpl))
 	//count := 0
-	//for i, repo := range repos {
-	//	repo.Versions = repo.GetVersions()
-	//	count += len(repo.Versions)
-	//	logger.Info("generator sync config %s-%s.yaml %s fixed version %s", prefix, key, repo.Name, repo.Versions)
-	//	repos[i] = repo
-	//}
-
+	k8s := false
+	for _, repo := range repos {
+		//repo.Versions = repo.GetVersions()
+		//count += len(repo.Versions)
+		//logger.Info("generator sync config %s-%s.yaml %s fixed version %s", prefix, key, repo.Name, repo.Versions)
+		//repos[i] = repo
+		if stringInSlice(repo.Name, specialRepos) {
+			k8s = true
+			break
+		}
+	}
+	tmplstr := tmpl
+	if k8s {
+		tmplstr = k8stmpl
+	}
+	t := template.Must(template.New("repos").Parse(tmplstr))
 	err = t.Execute(f, map[string]interface{}{
 		//"Count": count,
 		"Repos": repos,
