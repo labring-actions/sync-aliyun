@@ -53,7 +53,11 @@ func fetchDockerHubAllRepo() (map[string][]string, error) {
 			for _, repo := range repositories.Results {
 				if stringInSlice(repo.Name, specialRepos) {
 					versions[repo.Name] = []string{repo.Name}
-				} else if strings.HasPrefix(repo.Name, "sealos") {
+				} else if strings.HasPrefix(repo.Name, "sealos-cloud") {
+					versions[repo.Name] = []string{repo.Name}
+				} else if repo.Name == "sealos-patch" {
+					versions[repo.Name] = []string{repo.Name}
+				} else if repo.Name == "sealos" {
 					versions[repo.Name] = []string{repo.Name}
 				} else {
 					newRepos = append(newRepos, repo.Name)
