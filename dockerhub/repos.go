@@ -164,7 +164,8 @@ func fetchDockerHubAllRepo() (map[string][]RepoInfo, error) {
 						{Name: repo.Name},
 					}
 				} else if strings.HasPrefix(repo.Name, "sealos") {
-					if repo.Name == "sealos-patch" || strings.HasPrefix(repo.Name, "sealos-cloud") || repo.Name == "sealos" {
+					//TODO will add labring/sealos-patch
+					if strings.HasPrefix(repo.Name, "sealos-cloud") || repo.Name == "sealos" {
 						versions[repo.Name] = []RepoInfo{
 							{Name: repo.Name, Filter: "v*"},
 						}
