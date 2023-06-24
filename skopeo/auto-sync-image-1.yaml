@@ -1,13 +1,93 @@
+#count: 54
 docker.io:
   images:
-    labring/elastic: [ ]
-    labring/k8tz: [ ]
-    labring/gpu-operator: [ ]
-    labring/kafka-exporter: [ ]
-    labring/kafka-operator: [ ]
-    labring/metrics-server: [ ]
-    labring/kube-prometheus-stack: [ ]
-    labring/minio: [ ]
-    labring/redis-exporter: [ ]
-    labring/skywalking: [ ]
+    labring/kube-state-metrics:
+    - v2.4.2
+    labring/bitnami-etcd:
+    - v3.5.6
+    - v3.5.8
+    labring/neuvector-crio:
+    - v5.0.5
+    labring/neuvector-containerd:
+    - v5.0.5
+    labring/neuvector-docker:
+    - v5.0.5
+    labring/sriov-network-operator:
+    - v1.2.0
+    labring/cni-plugin:
+    - v1.1.1
+    labring/k9s:
+    - v0.27.2
+    labring/local-path-provisioner:
+    - v0.0.23
+    labring/kube-vip:
+    - v0.5.10
+    - v0.5.7
+    - v0.5.8
+    - v0.5.9
+    labring/openebs-lvm:
+    - 0.8.0
+    - lvm-1.0.1
+    - v0.8.0
+    labring/bitnami-redis-cluster:
+    - v7.0.8
+    - v7.0.9
+    - v8.4.4
+    labring/nerdctl:
+    - v1.2.0
+    - v1.2.1
+    labring/ot-redis-cluster:
+    - v0.14.0
+    labring/karmada:
+    - v1.5.0
+    labring/registry:
+    - untar
+    - untar_4.2.0-alpha4
+    labring/helmfile:
+    - v0.151.0
+    - v0.152.0
+    - v0.153.0
+    labring/docker-terminal:
+    - 1.19.4
+    - 1.20.1-1.24.4
+    - 1.20.3
+    - 1.20.4
+    - 1.20.4-2
+    - 1.20.4-3
+    labring/etcdctl:
+    - v3.5.6
+    labring/neuvector:
+    - v5.1.0
+    labring/telepresence:
+    - 2.11.0
+    labring/ceph-csi-rbd:
+    - v3.8.0
+    labring/ceph-csi-cephfs:
+    - v3.8.0
+    labring/kubernetes-reflector:
+    - v7.0.151
+    labring/docker-adminer:
+    - v4.8.1
+    labring/bitnami-minio:
+    - v12.6.4
+    labring/bitnami-kafka:
+    - v22.1.5
+    labring/bitnami-mysql:
+    - v9.10.4
+    labring/bitnami-zookeeper:
+    - v11.4.2
+    labring/mongodb-single:
+    - 6.0.6
+    labring/kubeblocks:
+    - v0.5.2
+    labring/openim:
+    - errcode
+    labring/docker-zot:
+    - v1.4.3
+    - v2.0.0-rc4
+    labring/zot:
+    - v1.4.3
+    - v2.0.0-rc4
+    labring/zot-upload:
+    - main
   tls-verify: false

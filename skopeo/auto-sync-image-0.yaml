@@ -1,12 +1,305 @@
+#count: 212
 docker.io:
   images:
-    labring/helm: [ ]
-    labring/coredns: [ ]
-    labring/openebs: [ ]
-    labring/ingress-nginx: [ ]
-    labring/minio-operator: [ ]
-    labring/redis-operator: [ ]
-    labring/mysql-operator: [ ]
-    labring/calico: [ ]
-    labring/cert-manager: [ ]
+    labring/helm:
+    - v3.10.0
+    - v3.10.1
+    - v3.10.2
+    - v3.10.3
+    - v3.11.0
+    - v3.11.1
+    - v3.11.2
+    - v3.11.3
+    - v3.12.0
+    - v3.8.2
+    - v3.9.4
+    labring/coredns:
+    - v0.0.1
+    labring/openebs:
+    - v1.9.0
+    - v3.3.0
+    - v3.4.0
+    labring/ingress-nginx:
+    - 4.1.0
+    - v1.5.1
+    - v1.6.4
+    labring/minio-operator:
+    - v4.4.16
+    - v4.5.3
+    - v4.5.4
+    - v4.5.5
+    labring/redis-operator:
+    - 3.1.4
+    - v1.2.2
+    - v1.2.3
+    - v1.2.4
+    labring/mysql-operator:
+    - 8.0.23-14.1
+    - 8.0.27-18.1
+    labring/calico:
+    - 3.24.5
+    - 3.24.6
+    - v3.22.1
+    - v3.22.5
+    - v3.23.5
+    - v3.24.1
+    - v3.24.5
+    - v3.24.6
+    - v3.25.0
+    - v3.25.1
+    labring/cert-manager:
+    - v1.12.1
+    - v1.8.0
+    labring/elastic:
+    - 7.17.3
+    labring/k8tz:
+    - 0.4.0
+    labring/gpu-operator:
+    - v1.10.1
+    labring/kafka-exporter:
+    - latest
+    labring/kafka-operator:
+    - 0.28.0
+    labring/metrics-server:
+    - v0.6.1
+    - v0.6.2
+    labring/kube-prometheus-stack:
+    - v0.56.0
+    - v0.63.0
+    labring/minio:
+    - 2021.6.17-debian-10-r38
+    - 2022.5.9-debian-10-r13
+    labring/redis-exporter:
+    - latest
+    labring/skywalking:
+    - 8.8.1
+    labring/flannel:
+    - v0.18.1
+    - v0.19.0
+    - v0.19.1
+    - v0.19.2
+    - v0.20.0
+    - v0.20.1
+    - v0.20.2
+    - v0.21.4
+    labring/clickhouse:
+    - 0.18.4
+    labring/kubernetes-dashboard:
+    - v1.0.8
+    - v2.7.0
+    labring/lvscare:
+    - v1.1.3-beta.8
+    labring/kubelet:
+    - main
+    - patch
+    labring/athenaserving:
+    - v2.0.0rc1
+    labring/rook:
+    - v1.9.11
+    - v1.9.8
+    labring/kubesphere:
+    - v3.3.0
+    - v3.3.1
+    - v3.3.2
+    labring/endpoints-operator:
+    - v0.1.1
+    - v0.2.0
+    - v0.2.1
+    labring/cilium:
+    - v1.11.11
+    - v1.12.0
+    - v1.12.1
+    - v1.12.10
+    - v1.12.11
+    - v1.12.4
+    - v1.12.5
+    - v1.12.7
+    - v1.12.8
+    - v1.12.9
+    - v1.13.0
+    labring/deepflow:
+    - 6.1.2
+    - 6.1.4
+    - 6.1.5
+    - 6.1.6
+    - latest
+    - stable
+    - v6.1.1
+    - v6.1.7
+    - v6.1.8
+    - v6.2.0
+    - v6.2.1
+    - v6.2.2
+    - v6.2.3
+    - v6.2.4
+    - v6.2.5
+    - v6.2.6
+    labring/argocd:
+    - v2.4.17
+    - v2.4.8
+    - v2.5.3
+    labring/istio:
+    - 1.15.1
+    - 1.16.2
+    - 1.16.2-min
+    - v1.14.2
+    labring/metallb:
+    - v0.13.4
+    - v0.13.7
+    - v0.13.9
+    labring/longhorn:
+    - v1.3.0
+    - v1.4.0
+    labring/tidb-operator:
+    - v1.3.7
+    labring/kube-ovn:
+    - v1.10.4
+    - v1.10.5
+    - v1.10.6
+    - v1.10.7
+    - v1.11.0
+    - v1.11.3
+    - v1.11.5
+    labring/docker-cni-plugins:
+    - v1.1.1
+    - v1.2.0
+    labring/golang-vim-dev:
+    - 1.18.4
+    labring/docker-casbin:
+    - main
+    labring/tekton:
+    - v0.61.0
+    labring/zalando-postgres-operator:
+    - 14
+    - v1.9.0
+    labring/kubevirt:
+    - v0.57.0
+    - v0.58.0
+    labring/oracle-mysql-operator:
+    - 8.0.30-2.0.6
+    labring/jenkins:
+    - v2.346.2
+    labring/velero:
+    - v1.9.1
+    labring/loki:
+    - 2.6.1
+    - v2.6.1
+    labring/kubegems:
+    - v1.21.4
+    - v1.22.0
+    - v1.22.0-ai1
+    - v1.22.0-ai2
+    - v1.22.0-sealos-part3
+    - v1.22.2
+    labring/kuboard:
+    - v2
+    - v3
+    labring/wordpress:
+    - v6.0.1
+    labring/apisix:
+    - 2.13.1
+    - 2.14.1
+    - 2.15.0
+    - 2.15.1
+    labring/bitnami-mongodb:
+    - 6.0.2
+    labring/bitnami-mongodb-sharded:
+    - 6.0.2
+    labring/mongodb-community-operator:
+    - 0.7.6
+    labring/traefik:
+    - 2.8.7
+    labring/docker-kuboard:
+    - v2
+    labring/tomcat:
+    - 10.0.23
+    - v10.1.8
+    - v10.5.14
+    labring/crunchy-postgres-operator:
+    - v5.2.0
+    - v5.3.1
+    labring/nginx:
+    - 1.21.5
+    - 1.21.6
+    - 1.22.0
+    - 1.23.0
+    - 1.23.1
+    - 1.23.2
+    - v1.23.3
+    - v1.24.0
+    labring/rocketmq-operator:
+    - 4.5.0
+    labring/fluent-bit:
+    - 0.20.9
+    labring/fluent-operator-containerd:
+    - v1.5.1
+    labring/eck-operator:
+    labring/kong-ingress-controller:
+    labring/flink-kubernetes-operator:
+    labring/mssql-server:
+    - 2017-latest
+    - 2019-latest
+    - 2022-latest
+    labring/rabbitmq-cluster-operator:
+    - 2.0.0
+    labring/fluxcd:
+    - 0.36.0
+    - v0.37.0
+    labring/weave-gitops:
+    - 0.10.1
+    labring/rancher:
+    - v2.6.7
+    - v2.6.8
+    - v2.6.9
+    labring/kubevela:
+    - v1.6.0
+    - v1.6.1
+    - v1.6.2
+    - v1.6.3
+    labring/kustomize:
+    - v4.5.6
+    labring/affine:
+    - latest
+    labring/trivy-operator:
+    - v0.5.0
+    labring/memcached:
+    - 1.6.17
+    labring/nfs-subdir-external-provisioner:
+    - v4.0.17
+    labring/code-server:
+    - v4.8.2
+    - v4.9.1
+    labring/contour:
+    - v1.23.0
+    labring/harbor:
+    - v2.6.1
+    - v2.7.0
+    labring/gloo:
+    - v1.12.34
+    labring/gitea:
+    - v1.17.3
+    - v1.18.3
+    labring/openebs-jiva:
+    - v3.3.0
+    labring/openebs-cstor:
+    - v3.3.0
+    labring/prometheus-adapter:
+    - 3.4.2
+    labring/openebs-mayastor:
+    - v1.0.4
+    labring/awx-operator:
+    - v1.1.0
+    labring/multus-cni:
+    - v3.9.2
+    - v3.9.3
+    - v4.0.1
+    labring/chaos-mesh-containerd:
+    - v2.4.3
+    - v2.5.0
+    labring/chaos-mesh:
+    - v2.4.3
+    - v2.5.0
+    labring/chaos-mesh-crio:
+    - v2.4.3
+    - v2.5.0
   tls-verify: false

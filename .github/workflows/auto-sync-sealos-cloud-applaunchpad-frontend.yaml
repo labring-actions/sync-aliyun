@@ -1,10 +1,10 @@
-name: skopeo-sync for skopeo/auto-sync-image-1.yaml 
+name: skopeo-sync for skopeo/auto-sync-sealos-cloud-applaunchpad-frontend.yaml 
 on:
   push:
     branches: [ main ]
     paths:
-      - "skopeo/auto-sync-image-1.yaml"
-      - ".github/workflows/auto-sync-image-1.yaml"
+      - "skopeo/auto-sync-sealos-cloud-applaunchpad-frontend.yaml"
+      - ".github/workflows/auto-sync-sealos-cloud-applaunchpad-frontend.yaml"
   schedule:
     - cron: '0 16 * * *'
   workflow_dispatch:
@@ -28,6 +28,6 @@ jobs:
       - name: sync images
         run: |
           sudo podman run -it --rm -v ${PWD}:/workspace -w /workspace quay.io/skopeo/stable:latest \
-          sync --src yaml --dest docker skopeo/auto-sync-image-1.yaml ${{ vars.A_REGISTRY_NAME }}/${{ vars.A_REGISTRY_REPOSITORY }} \
+          sync --src yaml --dest docker skopeo/auto-sync-sealos-cloud-applaunchpad-frontend.yaml ${{ vars.A_REGISTRY_NAME }}/${{ vars.A_REGISTRY_REPOSITORY }} \
           --dest-username $USERNAME --dest-password "$PASSWORD" \
           --keep-going --retry-times 2 --all
