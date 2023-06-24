@@ -1,12 +1,12 @@
 docker.io:
   images:
-    labring/kube-state-metrics: [ ]
-    labring/bitnami-etcd: [ ]
-    labring/neuvector-crio: [ ]
-    labring/neuvector-containerd: [ ]
-    labring/neuvector-docker: [ ]
-    labring/sriov-network-operator: [ ]
-    labring/cni-plugin: [ ]
-    labring/k9s: [ ]
-    labring/local-path-provisioner: [ ]
+    labring/kube-state-metrics: []
+    labring/bitnami-etcd: []
+    labring/neuvector-crio: []
+    labring/neuvector-containerd: []
+    labring/neuvector-docker: []
+    labring/sriov-network-operator: []
+    labring/cni-plugin: []
+    labring/k9s: []
+    labring/local-path-provisioner: []
   tls-verify: false

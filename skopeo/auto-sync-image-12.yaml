@@ -1,13 +1,6 @@
 docker.io:
   images:
-    labring/etcdctl: [ ]
-    labring/neuvector: [ ]
-    labring/telepresence: [ ]
-    labring/sealos-cloud-terminal-frontend: [ ]
-    labring/sealos-cloud-bytebase-frontend: [ ]
-    labring/sealos-cloud-applaunchpad-frontend: [ ]
-    labring/sealos-cloud-imagehub-frontend: [ ]
-    labring/sealos-cloud-auth-service: [ ]
-    labring/sealos-cloud-account-controller: [ ]
-    labring/sealos-cloud-cluster-controller: [ ]
+    labring/etcdctl: []
+    labring/neuvector: []
+    labring/telepresence: []
   tls-verify: false

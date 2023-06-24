@@ -1,0 +1,4 @@
+docker.io:
+  images:
+    labring/sealos-cloud-user-controller: []
+  tls-verify: false

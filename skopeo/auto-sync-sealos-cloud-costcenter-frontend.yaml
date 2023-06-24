@@ -1,0 +1,4 @@
+docker.io:
+  images:
+    labring/sealos-cloud-costcenter-frontend: []
+  tls-verify: false
