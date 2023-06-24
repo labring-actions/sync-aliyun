@@ -1,0 +1,4 @@
+docker.io:
+  images:
+    labring/sealos-cloud-applaunchpad-frontend: [ ]
+  tls-verify: false

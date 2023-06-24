@@ -9,5 +9,4 @@ docker.io:
     labring/registry: [ ]
     labring/helmfile: [ ]
     labring/docker-terminal: [ ]
-    labring/sealos-patch: [ ]
   tls-verify: false

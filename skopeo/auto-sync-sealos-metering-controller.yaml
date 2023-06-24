@@ -1,0 +1,4 @@
+docker.io:
+  images:
+    labring/sealos-metering-controller: [ ]
+  tls-verify: false

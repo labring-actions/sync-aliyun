@@ -8,6 +8,4 @@ docker.io:
     labring/flink-kubernetes-operator: [ ]
     labring/mssql-server: [ ]
     labring/rabbitmq-cluster-operator: [ ]
-    labring/sealos-terminal-controller: [ ]
-    labring/sealos-user-controller: [ ]
   tls-verify: false

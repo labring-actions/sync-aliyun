@@ -1,0 +1,4 @@
+docker.io:
+  images:
+    labring/sealos-cloud-terminal-frontend: [ ]
+  tls-verify: false
