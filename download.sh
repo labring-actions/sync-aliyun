@@ -18,3 +18,7 @@ tar -zxvf sync-aliyun_${latest_release#v}_linux_amd64.tar.gz sync-aliyun
 rm -rf sync-aliyun_${latest_release#v}_linux_amd64.tar.gz
 
 chmod a+x sync-aliyun
+
+mkdir "/tmp"
+
+mv sync-aliyun "/tmp"
