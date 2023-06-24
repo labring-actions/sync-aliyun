@@ -20,17 +20,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/cuisongliu/logger"
+	"k8s.io/apimachinery/pkg/util/sets"
 	"strings"
 )
-
-type Repositories struct {
-	Results []Repo `json:"results"`
-	Next    string `json:"next"`
-}
-
-type Repo struct {
-	Name string `json:"name"`
-}
 
 type RepoInfo struct {
 	Name         string   `json:"name"`
@@ -38,7 +30,57 @@ type RepoInfo struct {
 	FixedVersion bool     `json:"fixed_version"`
 }
 
+func (r *RepoInfo) GetVersions() []string {
+	type TagList struct {
+		Next    string `json:"next"`
+		Results []struct {
+			Name string `json:"name"`
+		} `json:"results"`
+	}
+	fetchURL := fmt.Sprintf("https://registry.hub.docker.com/v2/repositories/labring/%s/tags", r.Name)
+	tagSet := sets.Set[string]{}
+	if err := Retry(func() error {
+		for fetchURL != "" {
+			logger.Debug("fetch dockerhub url: %s", fetchURL)
+			data, err := Request(fetchURL, "GET", []byte(""), 0)
+			if err != nil {
+				return err
+			}
+			var tags TagList
+			if err = json.Unmarshal(data, &tags); err != nil {
+				return err
+			}
+			for _, tag := range tags.Results {
+				if strings.HasSuffix(tag.Name, "-amd64") {
+					continue
+				}
+				if strings.HasSuffix(tag.Name, "-arm64") {
+					continue
+				}
+				tagSet = tagSet.Insert(tag.Name)
+			}
+			fetchURL = tags.Next
+		}
+		r.Versions = sets.List(tagSet)
+		return nil
+	}); err != nil {
+		logger.Error("fetch dockerhub url: %s error: %s", fetchURL, err.Error())
+		r.Versions = []string{}
+		return nil
+	}
+	return r.Versions
+}
+
 func fetchDockerHubAllRepo() (map[string][]RepoInfo, error) {
+	type Repo struct {
+		Name string `json:"name"`
+	}
+
+	type Repositories struct {
+		Results []Repo `json:"results"`
+		Next    string `json:"next"`
+	}
+
 	fetchURL := "https://hub.docker.com/v2/repositories/labring/"
 	specialRepos := []string{"kubernetes", "kubernetes-crio", "kubernetes-docker"}
 
@@ -59,20 +101,15 @@ func fetchDockerHubAllRepo() (map[string][]RepoInfo, error) {
 			for _, repo := range repositories.Results {
 				if stringInSlice(repo.Name, specialRepos) {
 					versions[repo.Name] = []RepoInfo{
-						{Name: repo.Name, FixedVersion: true},
-					}
-				} else if strings.HasPrefix(repo.Name, "sealos-cloud") {
-					versions[repo.Name] = []RepoInfo{
-						{Name: repo.Name, FixedVersion: true},
-					}
-				} else if repo.Name == "sealos-patch" {
-					versions[repo.Name] = []RepoInfo{
-						{Name: repo.Name, FixedVersion: true},
-					}
-				} else if repo.Name == "sealos" {
-					versions[repo.Name] = []RepoInfo{
 						{Name: repo.Name},
 					}
+				} else if strings.HasPrefix(repo.Name, "sealos-cloud") {
+					if repo.Name == "sealos-patch" || strings.HasPrefix(repo.Name, "sealos-cloud") || repo.Name == "sealos" {
+						versions[repo.Name] = []RepoInfo{
+							{Name: repo.Name},
+						}
+					}
+					logger.Warn("sealos container image repo is deprecated, please use sealos cloud repo")
 				} else {
 					newRepos = append(newRepos, RepoInfo{Name: repo.Name})
 				}
