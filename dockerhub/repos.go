@@ -150,7 +150,7 @@ func fetchDockerHubAllRepo() (map[string][]RepoInfo, error) {
 		Next    string `json:"next"`
 	}
 
-	fetchURL := "https://hub.docker.com/v2/repositories/labring/"
+	fetchURL := "https://hub.docker.com/v2/repositories/labring?page_size=100"
 
 	versions := make(map[string][]RepoInfo)
 	if err := Retry(func() error {
