@@ -20,6 +20,7 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"github.com/cuisongliu/logger"
 	"io"
 	"net"
 	"net/http"
@@ -58,6 +59,8 @@ func Request(url, method string, requestData []byte, timeout int64) ([]byte, err
 	}
 	if resp.StatusCode != 200 {
 		if resp.StatusCode == 429 {
+			logger.Warn("request %s resp code is %d, retry after 2s", url, resp.StatusCode)
+			time.Sleep(2 * time.Second)
 			return Request(url, method, requestData, timeout)
 		}
 		return nil, fmt.Errorf("request %s resp code is %d", url, resp.StatusCode)
