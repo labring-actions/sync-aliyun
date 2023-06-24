@@ -16,41 +16,50 @@ limitations under the License.
 
 package dockerhub
 
-import "github.com/cuisongliu/logger"
+import (
+	"github.com/cuisongliu/logger"
+	"os"
+)
 
-func Do(syncDir string) {
-	workflowDir := ".github/workflows"
+func Do() {
 	logger.Cfg(true, false)
+	syncDir := os.Getenv("SYNC_DIR")
+	if syncDir == "" {
+		logger.Fatal("SYNC_DIR is empty")
+		return
+	}
+	logger.Info("using syncDir %s", syncDir)
+	workflowDir := ".github/workflows"
 	err := autoRemoveGenerator(syncDir)
 	if err != nil {
-		logger.Error("autoRemoveGenerator sync config error %s", err.Error())
+		logger.Fatal("autoRemoveGenerator sync config error %s", err.Error())
 		return
 	}
 	err = autoRemoveGenerator(workflowDir)
 	if err != nil {
-		logger.Error("autoRemoveGenerator workflow config error %s", err.Error())
+		logger.Fatal("autoRemoveGenerator workflow config error %s", err.Error())
 		return
 	}
 	got, err := fetchDockerHubAllRepo()
 	if err != nil {
-		logger.Error("fetchDockerHubAllRepo error %s", err.Error())
+		logger.Fatal("fetchDockerHubAllRepo error %s", err.Error())
 		return
 	}
 	data, err := getCIRun(".cirun.yml")
 	if err != nil {
-		logger.Error("getCIRun error %s", err.Error())
+		logger.Fatal("getCIRun error %s", err.Error())
 		return
 	}
 	logger.Info("get docker hub all repo success")
 	for k, v := range got {
 		err = generatorSyncFile(syncDir, k, v)
 		if err != nil {
-			logger.Error("generatorSyncFile %s error %s", k, err.Error())
+			logger.Fatal("generatorSyncFile %s error %s", k, err.Error())
 			continue
 		}
 		err = generatorWorkflowFile(workflowDir, syncDir, k, data)
 		if err != nil {
-			logger.Error("generatorWorkflowFile %s error %s", k, err.Error())
+			logger.Fatal("generatorWorkflowFile %s error %s", k, err.Error())
 			continue
 		}
 	}

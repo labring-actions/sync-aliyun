@@ -19,7 +19,5 @@ package main
 import "github.com/labring-actions/sync-aliyun/dockerhub"
 
 func main() {
-	dockerhub.Retry(func() error {
-		return nil
-	})
+	dockerhub.Do()
 }
