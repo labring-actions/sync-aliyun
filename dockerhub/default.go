@@ -17,7 +17,10 @@ limitations under the License.
 package dockerhub
 
 import (
+	"context"
+	"fmt"
 	"github.com/cuisongliu/logger"
+	"golang.org/x/sync/errgroup"
 	"os"
 )
 
@@ -51,16 +54,25 @@ func Do() {
 		return
 	}
 	logger.Info("get docker hub all repo success")
+
+	g, _ := errgroup.WithContext(context.Background())
+
 	for k, v := range got {
-		err = generatorSyncFile(syncDir, k, v)
-		if err != nil {
-			logger.Fatal("generatorSyncFile %s error %s", k, err.Error())
-			continue
-		}
-		err = generatorWorkflowFile(workflowDir, syncDir, k, data)
-		if err != nil {
-			logger.Fatal("generatorWorkflowFile %s error %s", k, err.Error())
-			continue
-		}
+		// Capture the range variables.
+		k, v := k, v
+		g.Go(func() error {
+			if err = generatorSyncFile(syncDir, k, v); err != nil {
+				return fmt.Errorf("generatorSyncFile %s error: %w", k, err)
+			}
+			if err = generatorWorkflowFile(workflowDir, syncDir, k, data); err != nil {
+				return fmt.Errorf("generatorWorkflowFile %s error: %w", k, err)
+			}
+			return nil
+		})
+	}
+
+	// Wait for all goroutines to finish and return the first error.
+	if err = g.Wait(); err != nil {
+		logger.Fatal(err.Error())
 	}
 }
