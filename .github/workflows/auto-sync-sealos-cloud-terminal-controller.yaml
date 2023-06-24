@@ -1,4 +1,4 @@
-name: skopeo-sync for skopeo/auto-sync-sealos-cloud-terminal-controller.yaml 
+name: auto-sync-sealos-cloud-terminal-controller.yaml 
 on:
   push:
     branches: [ main ]

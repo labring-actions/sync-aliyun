@@ -1,4 +1,4 @@
-name: skopeo-sync for skopeo/auto-sync-sealos.yaml 
+name: auto-sync-sealos.yaml 
 on:
   push:
     branches: [ main ]
