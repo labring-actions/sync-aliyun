@@ -1,4 +1,4 @@
-name: skopeo-sync
+name: skopeo-sync for auto-sync 
 on:
   push:
     branches: [ main ]
@@ -15,7 +15,8 @@ env:
 
 jobs:
   image-sync:
-    runs-on: "cirun-gcp-amd64--${{ github.run_id }}"
+    runs-on: cirun-gcp-amd64--${{ github.run_id }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v2
