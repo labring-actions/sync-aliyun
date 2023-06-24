@@ -15,7 +15,7 @@ jobs:
         run: |
           bash download.sh
           export SYNC_DIR=skopeo
-          sync-aliyun
+          ./sync-aliyun
       - uses: peter-evans/create-pull-request@v5
         with:
           title: 'workflow: Automated Workflow Update for ${{steps.get-current-tag.outputs.tag }}'
