@@ -42,7 +42,7 @@ const k8stmpl = `docker.io:
   tls-verify: false
 `
 
-const workflowTmpl = `name: skopeo-sync for {{ .SYNC_FILE }} 
+const workflowTmpl = `name: {{ .SYNC_FILE_NAME }} 
 on:
   push:
     branches: [ main ]
