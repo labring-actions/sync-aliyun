@@ -1,0 +1,4 @@
+docker.io:
+  images:
+    labring/kubernetes-docker: [ ]
+  tls-verify: false
