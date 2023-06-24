@@ -42,6 +42,14 @@ const k8stmpl = `docker.io:
   tls-verify: false
 `
 
+const sealostmpl = `docker.io:
+  images-by-tag-regex:
+    {{- range .Repos }}
+    labring/{{ .Name }}: ^v.*
+    {{- end }}
+  tls-verify: false
+`
+
 const workflowTmpl = `name: {{ .SYNC_FILE_NAME }} 
 on:
   push:
@@ -106,6 +114,7 @@ func generatorSyncFile(dir, key string, repos []RepoInfo) error {
 	defer f.Close()
 	//count := 0
 	k8s := false
+	sealos := false
 	for _, repo := range repos {
 		//repo.Versions = repo.GetVersions()
 		//count += len(repo.Versions)
@@ -115,10 +124,16 @@ func generatorSyncFile(dir, key string, repos []RepoInfo) error {
 			k8s = true
 			break
 		}
+		if strings.HasPrefix(repo.Name, "sealos") {
+			sealos = true
+			break
+		}
 	}
 	tmplstr := tmpl
 	if k8s {
 		tmplstr = k8stmpl
+	} else if sealos {
+		tmplstr = sealostmpl
 	}
 	t := template.Must(template.New("repos").Parse(tmplstr))
 	err = t.Execute(f, map[string]interface{}{
