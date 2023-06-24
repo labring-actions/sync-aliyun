@@ -1,13 +1,10 @@
+#count: 3
 docker.io:
   images:
-    labring/sealos-cloud-infra-controller: [ ]
-    labring/sealos-cloud-imagehub-controller: [ ]
-    labring/sealos-cloud-app-controller: [ ]
-    labring/sealos-cloud-terminal-controller: [ ]
-    labring/sealos-cloud-metering-controller: [ ]
-    labring/sealos-cloud-user-controller: [ ]
-    labring/sealos-cloud-desktop-frontend: [ ]
-    labring/ceph-csi-rbd: [ ]
-    labring/ceph-csi-cephfs: [ ]
-    labring/kubernetes-reflector: [ ]
+    labring/ceph-csi-rbd:
+    - v3.8.0
+    labring/ceph-csi-cephfs:
+    - v3.8.0
+    labring/kubernetes-reflector:
+    - v7.0.151
   tls-verify: false

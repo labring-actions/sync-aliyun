@@ -1,12 +1,51 @@
+#count: 38
 docker.io:
   images:
-    labring/helm: [ ]
-    labring/coredns: [ ]
-    labring/openebs: [ ]
-    labring/ingress-nginx: [ ]
-    labring/minio-operator: [ ]
-    labring/redis-operator: [ ]
-    labring/mysql-operator: [ ]
-    labring/calico: [ ]
-    labring/cert-manager: [ ]
+    labring/helm:
+    - v3.10.0
+    - v3.10.1
+    - v3.10.2
+    - v3.10.3
+    - v3.11.0
+    - v3.11.1
+    - v3.11.2
+    - v3.11.3
+    - v3.12.0
+    - v3.8.2
+    - v3.9.4
+    labring/coredns:
+    - v0.0.1
+    labring/openebs:
+    - v1.9.0
+    - v3.3.0
+    - v3.4.0
+    labring/ingress-nginx:
+    - 4.1.0
+    - v1.5.1
+    - v1.6.4
+    labring/minio-operator:
+    - v4.4.16
+    - v4.5.3
+    - v4.5.4
+    - v4.5.5
+    labring/redis-operator:
+    - 3.1.4
+    - v1.2.2
+    - v1.2.3
+    - v1.2.4
+    labring/mysql-operator:
+    - 8.0.23-14.1
+    - 8.0.27-18.1
+    labring/calico:
+    - 3.24.5
+    - 3.24.6
+    - v3.22.1
+    - v3.22.5
+    - v3.23.5
+    - v3.24.1
+    - v3.24.5
+    - v3.24.6
+    - v3.25.0
+    - v3.25.1
+    labring/cert-manager:
   tls-verify: false

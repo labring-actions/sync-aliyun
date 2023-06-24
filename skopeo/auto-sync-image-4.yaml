@@ -1,13 +1,31 @@
+#count: 17
 docker.io:
   images:
-    labring/docker-casbin: [ ]
-    labring/tekton: [ ]
-    labring/zalando-postgres-operator: [ ]
-    labring/kubevirt: [ ]
-    labring/oracle-mysql-operator: [ ]
-    labring/jenkins: [ ]
-    labring/velero: [ ]
-    labring/loki: [ ]
-    labring/kubegems: [ ]
-    labring/kuboard: [ ]
+    labring/docker-casbin:
+    - main
+    labring/tekton:
+    - v0.61.0
+    labring/zalando-postgres-operator:
+    - 14
+    - v1.9.0
+    labring/kubevirt:
+    - v0.57.0
+    - v0.58.0
+    labring/oracle-mysql-operator:
+    - 8.0.30-2.0.6
+    labring/jenkins:
+    - v2.346.2
+    labring/velero:
+    - v1.9.1
+    labring/loki:
+    - 2.6.1
+    - v2.6.1
+    labring/kubegems:
+    - v1.21.4
+    - v1.22.0
+    - v1.22.0-ai1
+    - v1.22.0-ai2
+    - v1.22.0-sealos-part3
+    - v1.22.2
+    labring/kuboard:
   tls-verify: false

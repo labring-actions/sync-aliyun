@@ -1,13 +1,26 @@
+#count: 12
 docker.io:
   images:
-    labring/elastic: [ ]
-    labring/k8tz: [ ]
-    labring/gpu-operator: [ ]
-    labring/kafka-exporter: [ ]
-    labring/kafka-operator: [ ]
-    labring/metrics-server: [ ]
-    labring/kube-prometheus-stack: [ ]
-    labring/minio: [ ]
-    labring/redis-exporter: [ ]
-    labring/skywalking: [ ]
+    labring/elastic:
+    - 7.17.3
+    labring/k8tz:
+    - 0.4.0
+    labring/gpu-operator:
+    - v1.10.1
+    labring/kafka-exporter:
+    - latest
+    labring/kafka-operator:
+    - 0.28.0
+    labring/metrics-server:
+    - v0.6.1
+    - v0.6.2
+    labring/kube-prometheus-stack:
+    - v0.56.0
+    - v0.63.0
+    labring/minio:
+    - 2021.6.17-debian-10-r38
+    - 2022.5.9-debian-10-r13
+    labring/redis-exporter:
+    - latest
+    labring/skywalking:
   tls-verify: false

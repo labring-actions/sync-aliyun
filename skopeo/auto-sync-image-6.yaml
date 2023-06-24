@@ -1,13 +1,23 @@
+#count: 11
 docker.io:
   images:
-    labring/rocketmq-operator: [ ]
-    labring/fluent-bit: [ ]
-    labring/fluent-operator-containerd: [ ]
-    labring/eck-operator: [ ]
-    labring/kong-ingress-controller: [ ]
-    labring/flink-kubernetes-operator: [ ]
-    labring/mssql-server: [ ]
-    labring/rabbitmq-cluster-operator: [ ]
-    labring/sealos-terminal-controller: [ ]
-    labring/sealos-user-controller: [ ]
+    labring/rocketmq-operator:
+    - 4.5.0
+    labring/fluent-bit:
+    - 0.20.9
+    labring/fluent-operator-containerd:
+    - v1.5.1
+    labring/eck-operator:
+    - 2.4.0
+    - v2.6.1
+    labring/kong-ingress-controller:
+    - 2.7.0
+    labring/flink-kubernetes-operator:
+    - 1.2.0
+    labring/mssql-server:
+    - 2017-latest
+    - 2019-latest
+    - 2022-latest
+    labring/rabbitmq-cluster-operator:
+    - 2.0.0
   tls-verify: false

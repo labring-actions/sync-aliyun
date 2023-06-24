@@ -1,13 +1,37 @@
+#count: 23
 docker.io:
   images:
-    labring/flannel: [ ]
-    labring/clickhouse: [ ]
-    labring/kubernetes-dashboard: [ ]
-    labring/lvscare: [ ]
-    labring/kubelet: [ ]
-    labring/athenaserving: [ ]
-    labring/rook: [ ]
-    labring/kubesphere: [ ]
-    labring/endpoints-operator: [ ]
-    labring/cilium: [ ]
+    labring/flannel:
+    - v0.18.1
+    - v0.19.0
+    - v0.19.1
+    - v0.19.2
+    - v0.20.0
+    - v0.20.1
+    - v0.20.2
+    - v0.21.4
+    labring/clickhouse:
+    - 0.18.4
+    labring/kubernetes-dashboard:
+    - v1.0.8
+    - v2.7.0
+    labring/lvscare:
+    - v1.1.3-beta.8
+    labring/kubelet:
+    - main
+    - patch
+    labring/athenaserving:
+    - v2.0.0rc1
+    labring/rook:
+    - v1.9.11
+    - v1.9.8
+    labring/kubesphere:
+    - v3.3.0
+    - v3.3.1
+    - v3.3.2
+    labring/endpoints-operator:
+    - v0.1.1
+    - v0.2.0
+    - v0.2.1
+    labring/cilium:
   tls-verify: false
