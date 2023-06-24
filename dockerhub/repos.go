@@ -32,11 +32,17 @@ type Repo struct {
 	Name string `json:"name"`
 }
 
-func fetchDockerHubAllRepo() (map[string][]string, error) {
+type RepoInfo struct {
+	Name         string   `json:"name"`
+	Versions     []string `json:"versions"`
+	FixedVersion bool     `json:"fixed_version"`
+}
+
+func fetchDockerHubAllRepo() (map[string][]RepoInfo, error) {
 	fetchURL := "https://hub.docker.com/v2/repositories/labring/"
 	specialRepos := []string{"kubernetes", "kubernetes-crio", "kubernetes-docker"}
 
-	versions := make(map[string][]string)
+	versions := make(map[string][]RepoInfo)
 	if err := Retry(func() error {
 		index := 0
 		for fetchURL != "" {
@@ -49,18 +55,26 @@ func fetchDockerHubAllRepo() (map[string][]string, error) {
 			if err = json.Unmarshal(data, &repositories); err != nil {
 				return err
 			}
-			newRepos := make([]string, 0)
+			newRepos := make([]RepoInfo, 0)
 			for _, repo := range repositories.Results {
 				if stringInSlice(repo.Name, specialRepos) {
-					versions[repo.Name] = []string{repo.Name}
+					versions[repo.Name] = []RepoInfo{
+						{Name: repo.Name, FixedVersion: true},
+					}
 				} else if strings.HasPrefix(repo.Name, "sealos-cloud") {
-					versions[repo.Name] = []string{repo.Name}
+					versions[repo.Name] = []RepoInfo{
+						{Name: repo.Name, FixedVersion: true},
+					}
 				} else if repo.Name == "sealos-patch" {
-					versions[repo.Name] = []string{repo.Name}
+					versions[repo.Name] = []RepoInfo{
+						{Name: repo.Name, FixedVersion: true},
+					}
 				} else if repo.Name == "sealos" {
-					versions[repo.Name] = []string{repo.Name}
+					versions[repo.Name] = []RepoInfo{
+						{Name: repo.Name},
+					}
 				} else {
-					newRepos = append(newRepos, repo.Name)
+					newRepos = append(newRepos, RepoInfo{Name: repo.Name})
 				}
 			}
 			versions[fmt.Sprintf("image-%d", index)] = newRepos

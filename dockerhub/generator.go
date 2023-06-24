@@ -30,7 +30,7 @@ import (
 const tmpl = `docker.io:
   images:
     {{- range . }}
-    labring/{{ . }}: [ ]
+    labring/{{ .Name }}: [ ]
     {{- end }}
   tls-verify: false
 `
@@ -91,7 +91,7 @@ func autoRemoveGenerator(dir string) error {
 	return nil
 }
 
-func generatorSyncFile(dir, key string, repos []string) error {
+func generatorSyncFile(dir, key string, repos []RepoInfo) error {
 	f, err := os.Create(path.Join(dir, fmt.Sprintf("%s-%s.yaml", prefix, key)))
 	if err != nil {
 		return err
