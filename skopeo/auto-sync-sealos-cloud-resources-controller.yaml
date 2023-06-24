@@ -1,4 +1,4 @@
 docker.io:
-  images:
-    labring/sealos-cloud-resources-controller: []
+  images-by-tag-regex:
+    labring/sealos-cloud-resources-controller: ^v.*
   tls-verify: false
