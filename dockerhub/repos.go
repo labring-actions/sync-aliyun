@@ -74,7 +74,7 @@ func (r *RepoInfo) GetVersions() []string {
 			Name string `json:"name"`
 		} `json:"results"`
 	}
-	fetchURL := fmt.Sprintf("https://registry.hub.docker.com/v2/repositories/labring/%s/tags", r.Name)
+	fetchURL := fmt.Sprintf("https://registry.hub.docker.com/v2/repositories/labring/%s/tags?page_size=100", r.Name)
 	tagSet := sets.Set[string]{}
 	if err := Retry(func() error {
 		for fetchURL != "" {

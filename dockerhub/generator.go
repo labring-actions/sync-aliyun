@@ -27,9 +27,10 @@ import (
 	"strings"
 )
 
-const tmpl = `docker.io:
+const tmpl = `#count: {{.Count}}
+docker.io:
   images:
-    {{- range . }}
+    {{- range .Repos }}
     labring/{{ .Name }}: 
       {{- range .Versions }}
       - {{ . }}
@@ -101,14 +102,18 @@ func generatorSyncFile(dir, key string, repos []RepoInfo) error {
 	}
 	defer f.Close()
 	t := template.Must(template.New("repos").Parse(tmpl))
-
+	count := 0
 	for i, repo := range repos {
 		repo.Versions = repo.GetVersions()
+		count += len(repo.Versions)
 		logger.Info("generator sync config %s-%s.yaml %s fixed version %s", prefix, key, repo.Name, repo.Versions)
 		repos[i] = repo
 	}
 
-	err = t.Execute(f, repos)
+	err = t.Execute(f, map[string]interface{}{
+		"Count": count,
+		"Repos": repos,
+	})
 	if err != nil {
 		return err
 	}
