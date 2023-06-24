@@ -67,6 +67,8 @@ func filter(filter string) (FilterStrateg, error) {
 	}
 }
 
+var specialRepos = []string{"kubernetes", "kubernetes-crio", "kubernetes-docker"}
+
 func (r *RepoInfo) GetVersions() []string {
 	type TagList struct {
 		Next    string `json:"next"`
@@ -93,6 +95,13 @@ func (r *RepoInfo) GetVersions() []string {
 				}
 				if strings.HasSuffix(tag.Name, "-arm64") {
 					continue
+				}
+				if stringInSlice(r.Name, specialRepos) {
+					lower := strings.HasPrefix(tag.Name, "v1.19")
+					power := strings.HasPrefix(tag.Name, "v1.2")
+					if !lower && !power {
+						continue
+					}
 				}
 				s, _ := filter(r.Filter)
 				switch s {
@@ -142,7 +151,6 @@ func fetchDockerHubAllRepo() (map[string][]RepoInfo, error) {
 	}
 
 	fetchURL := "https://hub.docker.com/v2/repositories/labring/"
-	specialRepos := []string{"kubernetes", "kubernetes-crio", "kubernetes-docker"}
 
 	versions := make(map[string][]RepoInfo)
 	if err := Retry(func() error {
