@@ -1,4 +1,5 @@
+#count: 0
 docker.io:
   images:
-    labring/kubernetes-crio: [ ]
+    labring/kubernetes-crio:
   tls-verify: false

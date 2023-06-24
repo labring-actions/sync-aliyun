@@ -1,13 +1,29 @@
+#count: 15
 docker.io:
   images:
-    labring/wordpress: [ ]
-    labring/apisix: [ ]
-    labring/bitnami-mongodb: [ ]
-    labring/bitnami-mongodb-sharded: [ ]
-    labring/mongodb-community-operator: [ ]
-    labring/traefik: [ ]
-    labring/docker-kuboard: [ ]
-    labring/tomcat: [ ]
-    labring/crunchy-postgres-operator: [ ]
-    labring/nginx: [ ]
+    labring/wordpress:
+    - v6.0.1
+    labring/apisix:
+    - 2.13.1
+    - 2.14.1
+    - 2.15.0
+    - 2.15.1
+    labring/bitnami-mongodb:
+    - 6.0.2
+    labring/bitnami-mongodb-sharded:
+    - 6.0.2
+    labring/mongodb-community-operator:
+    - 0.7.6
+    labring/traefik:
+    - 2.8.7
+    labring/docker-kuboard:
+    - v2
+    labring/tomcat:
+    - 10.0.23
+    - v10.1.8
+    - v10.5.14
+    labring/crunchy-postgres-operator:
+    - v5.2.0
+    - v5.3.1
+    labring/nginx:
   tls-verify: false

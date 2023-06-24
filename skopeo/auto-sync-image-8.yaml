@@ -1,13 +1,11 @@
+#count: 4
 docker.io:
   images:
-    labring/sealos-cluster-controller: [ ]
-    labring/sealos-imagehub-controller: [ ]
-    labring/sealos-app-controller: [ ]
-    labring/sealos-infra-controller: [ ]
-    labring/sealos-metering-controller: [ ]
-    labring/contour: [ ]
-    labring/harbor: [ ]
-    labring/sealos-auth-service: [ ]
-    labring/sealos: [ ]
-    labring/gloo: [ ]
+    labring/contour:
+    - v1.23.0
+    labring/harbor:
+    - v2.6.1
+    - v2.7.0
+    labring/gloo:
+    - v1.12.34
   tls-verify: false

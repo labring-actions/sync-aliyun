@@ -1,13 +1,28 @@
+#count: 14
 docker.io:
   images:
-    labring/gitea: [ ]
-    labring/openebs-jiva: [ ]
-    labring/openebs-cstor: [ ]
-    labring/prometheus-adapter: [ ]
-    labring/openebs-mayastor: [ ]
-    labring/awx-operator: [ ]
-    labring/multus-cni: [ ]
-    labring/chaos-mesh-containerd: [ ]
-    labring/chaos-mesh: [ ]
-    labring/chaos-mesh-crio: [ ]
+    labring/gitea:
+    - v1.17.3
+    - v1.18.3
+    labring/openebs-jiva:
+    - v3.3.0
+    labring/openebs-cstor:
+    - v3.3.0
+    labring/prometheus-adapter:
+    - 3.4.2
+    labring/openebs-mayastor:
+    - v1.0.4
+    labring/awx-operator:
+    - v1.1.0
+    labring/multus-cni:
+    - v3.9.2
+    - v3.9.3
+    - v4.0.1
+    labring/chaos-mesh-containerd:
+    - v2.4.3
+    - v2.5.0
+    labring/chaos-mesh:
+    - v2.4.3
+    - v2.5.0
+    labring/chaos-mesh-crio:
   tls-verify: false

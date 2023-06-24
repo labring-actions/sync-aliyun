@@ -1,13 +1,8 @@
+#count: 2
 docker.io:
   images:
-    labring/docker-adminer: [ ]
-    labring/sealos-cloud: [ ]
-    labring/sealos-cloud-db-bytebase-controller: [ ]
-    labring/sealos-cloud-db-adminer-controller: [ ]
-    labring/sealos-cloud-adminer-frontend: [ ]
-    labring/sealos-cloud-dbprovider-frontend: [ ]
-    labring/sealos-cloud-resources-metering-controller: [ ]
-    labring/sealos-cloud-resources-controller: [ ]
-    labring/sealos-cloud-costcenter-frontend: [ ]
-    labring/bitnami-minio: [ ]
+    labring/docker-adminer:
+    - v4.8.1
+    labring/bitnami-minio:
+    - v12.6.4
   tls-verify: false

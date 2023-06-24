@@ -1,13 +1,29 @@
+#count: 15
 docker.io:
   images:
-    labring/fluxcd: [ ]
-    labring/weave-gitops: [ ]
-    labring/rancher: [ ]
-    labring/kubevela: [ ]
-    labring/kustomize: [ ]
-    labring/affine: [ ]
-    labring/trivy-operator: [ ]
-    labring/memcached: [ ]
-    labring/nfs-subdir-external-provisioner: [ ]
-    labring/code-server: [ ]
+    labring/fluxcd:
+    - 0.36.0
+    - v0.37.0
+    labring/weave-gitops:
+    - 0.10.1
+    labring/rancher:
+    - v2.6.7
+    - v2.6.8
+    - v2.6.9
+    labring/kubevela:
+    - v1.6.0
+    - v1.6.1
+    - v1.6.2
+    - v1.6.3
+    labring/kustomize:
+    - v4.5.6
+    labring/affine:
+    - latest
+    labring/trivy-operator:
+    - v0.5.0
+    labring/memcached:
+    - 1.6.17
+    labring/nfs-subdir-external-provisioner:
+    - v4.0.17
+    labring/code-server:
   tls-verify: false

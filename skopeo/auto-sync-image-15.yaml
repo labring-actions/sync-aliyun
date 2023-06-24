@@ -1,12 +1,24 @@
+#count: 11
 docker.io:
   images:
-    labring/bitnami-kafka: [ ]
-    labring/bitnami-mysql: [ ]
-    labring/bitnami-zookeeper: [ ]
-    labring/mongodb-single: [ ]
-    labring/kubeblocks: [ ]
-    labring/openim: [ ]
-    labring/docker-zot: [ ]
-    labring/zot: [ ]
-    labring/zot-upload: [ ]
+    labring/bitnami-kafka:
+    - v22.1.5
+    labring/bitnami-mysql:
+    - v9.10.4
+    labring/bitnami-zookeeper:
+    - v11.4.2
+    labring/mongodb-single:
+    - 6.0.6
+    labring/kubeblocks:
+    - v0.5.2
+    labring/openim:
+    - errcode
+    labring/docker-zot:
+    - v1.4.3
+    - v2.0.0-rc4
+    labring/zot:
+    - v1.4.3
+    - v2.0.0-rc4
+    labring/zot-upload:
+    - main
   tls-verify: false

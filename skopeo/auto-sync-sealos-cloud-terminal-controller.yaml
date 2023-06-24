@@ -1,0 +1,12 @@
+#count: 7
+docker.io:
+  images:
+    labring/sealos-cloud-terminal-controller:
+    - v4.2.1
+    - v4.2.1-rc3
+    - v4.2.1-rc4
+    - v4.2.1-rc5
+    - v4.2.1-rc6
+    - v4.2.2
+    - v5.0.0-alpha1
+  tls-verify: false
