@@ -57,6 +57,9 @@ func Request(url, method string, requestData []byte, timeout int64) ([]byte, err
 		return nil, err
 	}
 	if resp.StatusCode != 200 {
+		if resp.StatusCode == 429 {
+			return Request(url, method, requestData, timeout)
+		}
 		return nil, fmt.Errorf("request %s resp code is %d", url, resp.StatusCode)
 	}
 	defer resp.Body.Close()
