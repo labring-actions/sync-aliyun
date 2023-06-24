@@ -37,7 +37,7 @@ const tmpl = `docker.io:
 const k8stmpl = `docker.io:
   images-by-tag-regex:
     {{- range .Repos }}
-    labring/{{ .Name }}: ^v(1\.2[0-9]\.[1-9]?[0-9]?)(\.)?(-(4\.[1-9]\.[5-9]))?(-(amd64|arm64))?$
+    labring/{{ .Name }}: ^v(1\.2[0-9]\.[1-9]?[0-9]?)(\.)?(-(4\.[1-9]\.[5-9]))?$
     {{- end }}
   tls-verify: false
 `
