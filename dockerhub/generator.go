@@ -32,9 +32,9 @@ docker.io:
   images:
     {{- range .Repos }}
     labring/{{ .Name }}: 
-      {{- range .Versions }}
-      - {{ . }}
-      {{- end }}
+    {{- range .Versions }}
+    - {{ . }}
+    {{- end }}
     {{- end }}
   tls-verify: false
 `
