@@ -1,0 +1,13 @@
+docker.io:
+  images:
+    labring/sealos-cloud-infra-controller: [ ]
+    labring/sealos-cloud-imagehub-controller: [ ]
+    labring/sealos-cloud-app-controller: [ ]
+    labring/sealos-cloud-terminal-controller: [ ]
+    labring/sealos-cloud-metering-controller: [ ]
+    labring/sealos-cloud-user-controller: [ ]
+    labring/sealos-cloud-desktop-frontend: [ ]
+    labring/ceph-csi-rbd: [ ]
+    labring/ceph-csi-cephfs: [ ]
+    labring/kubernetes-reflector: [ ]
+  tls-verify: false
