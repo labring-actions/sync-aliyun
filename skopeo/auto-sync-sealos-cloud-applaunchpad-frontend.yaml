@@ -1,4 +1,4 @@
 docker.io:
-  images:
-    labring/sealos-cloud-applaunchpad-frontend: []
+  images-by-tag-regex:
+    labring/sealos-cloud-applaunchpad-frontend: ^v.*
   tls-verify: false
