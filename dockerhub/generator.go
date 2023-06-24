@@ -160,7 +160,7 @@ func generatorWorkflowFile(dir, syncDir, key string, labels []string) error {
 
 	runOn := "ubuntu-22.04"
 	if len(labels) > 0 {
-		runOn = labels[0]
+		runOn = fmt.Sprintf("%s--${{ github.run_id }}", labels[0])
 	}
 
 	err = t.Execute(f, map[string]string{
