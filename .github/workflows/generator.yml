@@ -14,7 +14,6 @@ jobs:
           fetch-depth: 0
       - name: auto generator
         run: |
-          sudo docker login -u "${{ vars.D_REGISTRY_REPOSITORY }}" -p "${{ secrets.D_REGISTRY_TOKEN }}" "${{ vars.D_REGISTRY_NAME }}"
           bash download.sh
           export SYNC_DIR=skopeo
           /tmp/sync-aliyun
