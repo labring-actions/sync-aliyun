@@ -30,9 +30,9 @@ import (
 const tmpl = `docker.io:
   {{- if .ByTagRegex }}
   images-by-tag-regex:
-	{{- range .Repos }}
-	labring/{{ .Name }}: {{ .Filter }}
-	{{- end }}
+    {{- range .Repos }}
+    labring/{{ .Name }}: {{ .Filter }}
+    {{- end }}
   {{- else }}
   images:
     {{- range .Repos }}
