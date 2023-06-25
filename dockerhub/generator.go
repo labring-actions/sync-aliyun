@@ -28,25 +28,17 @@ import (
 )
 
 const tmpl = `docker.io:
+  {{- if .ByTagRegex }}
+  images-by-tag-regex:
+	{{- range .Repos }}
+	labring/{{ .Name }}: {{ .Filter }}
+	{{- end }}
+  {{- else }}
   images:
     {{- range .Repos }}
     labring/{{ .Name }}: []
     {{- end }}
-  tls-verify: false
-`
-const k8stmpl = `docker.io:
-  images-by-tag-regex:
-    {{- range .Repos }}
-    labring/{{ .Name }}: ^v(1\.2[0-9]\.[1-9]?[0-9]?)(\.)?$
-    {{- end }}
-  tls-verify: false
-`
-
-const sealostmpl = `docker.io:
-  images-by-tag-regex:
-    {{- range .Repos }}
-    labring/{{ .Name }}: ^v.*
-    {{- end }}
+  {{- end }}
   tls-verify: false
 `
 
@@ -106,40 +98,14 @@ func autoRemoveGenerator(dir string) error {
 	return nil
 }
 
-func generatorSyncFile(dir, key string, repos []RepoInfo) error {
+func generatorSyncFile(dir, key string, repos RepoInfoList) error {
 	f, err := os.Create(path.Join(dir, fmt.Sprintf("%s-%s.yaml", prefix, key)))
 	if err != nil {
 		return err
 	}
 	defer f.Close()
-	//count := 0
-	k8s := false
-	sealos := false
-	for _, repo := range repos {
-		//repo.Versions = repo.GetVersions()
-		//count += len(repo.Versions)
-		//logger.Info("generator sync config %s-%s.yaml %s fixed version %s", prefix, key, repo.Name, repo.Versions)
-		//repos[i] = repo
-		if stringInSlice(repo.Name, specialRepos) {
-			k8s = true
-			break
-		}
-		if strings.HasPrefix(repo.Name, "sealos") {
-			sealos = true
-			break
-		}
-	}
-	tmplstr := tmpl
-	if k8s {
-		tmplstr = k8stmpl
-	} else if sealos {
-		tmplstr = sealostmpl
-	}
-	t := template.Must(template.New("repos").Parse(tmplstr))
-	err = t.Execute(f, map[string]interface{}{
-		//"Count": count,
-		"Repos": repos,
-	})
+	t := template.Must(template.New("repos").Parse(tmpl))
+	err = t.Execute(f, repos)
 	if err != nil {
 		return err
 	}

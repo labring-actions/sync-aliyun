@@ -22,7 +22,6 @@ import (
 	"github.com/cuisongliu/logger"
 	"golang.org/x/sync/errgroup"
 	"os"
-	"path"
 )
 
 func Do() {
@@ -76,13 +75,4 @@ func Do() {
 	if err = g.Wait(); err != nil {
 		logger.Fatal(err.Error())
 	}
-	out := count(syncDir)
-	logger.Info("generator %d image version sync file success", out)
-	f, err := os.Create(path.Join(syncDir, "count.json"))
-	if err != nil {
-		logger.Fatal("create count.json error %s", err.Error())
-		return
-	}
-	defer f.Close()
-	f.WriteString(fmt.Sprintf("{\"count\":%d}", out))
 }

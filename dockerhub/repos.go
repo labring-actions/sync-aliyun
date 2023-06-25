@@ -20,7 +20,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/cuisongliu/logger"
-	"k8s.io/apimachinery/pkg/util/sets"
 	"strings"
 )
 
@@ -30,117 +29,14 @@ type RepoInfo struct {
 	Filter   string   `json:"filter"`
 }
 
-type FilterStrateg string
-
-const (
-	FilterStrategyNone     FilterStrateg = "none"
-	FilterStrategyPrefix   FilterStrateg = "prefix"
-	FilterStrategySuffix   FilterStrateg = "suffix"
-	FilterStrategyContains FilterStrateg = "contains"
-	FilterStrategyEquals   FilterStrateg = "equals"
-	FilterStrategyAll      FilterStrateg = "all"
-)
-
-func filter(filter string) (FilterStrateg, error) {
-	if filter == "" {
-		return FilterStrategyAll, nil
-	}
-	if strings.Contains(filter, "*") {
-		if filter[0] == '*' && filter[len(filter)-1] == '*' {
-			return FilterStrategyContains, nil
-		}
-		if filter[0] == '*' {
-			if strings.LastIndex(filter, "*") == 0 {
-				return FilterStrategySuffix, nil
-			}
-			return FilterStrategyNone, fmt.Errorf("your filter must has one char '*' , example *ccc ")
-		}
-		if filter[len(filter)-1] == '*' {
-			if strings.LastIndex(filter, "*") == len(filter)-1 {
-				return FilterStrategyPrefix, nil
-			}
-			return FilterStrategyNone, fmt.Errorf("your filter must has one char '*' , example ccc* ")
-		}
-		return FilterStrategyNone, fmt.Errorf("not spport char '*' in filter middle")
-	} else {
-		return FilterStrategyEquals, nil
-	}
+type RepoInfoList struct {
+	Repos      []RepoInfo `json:"repos"`
+	ByTagRegex bool
 }
 
 var specialRepos = []string{"kubernetes", "kubernetes-crio", "kubernetes-docker"}
 
-func (r *RepoInfo) GetVersions() []string {
-	type TagList struct {
-		Next    string `json:"next"`
-		Results []struct {
-			Name string `json:"name"`
-		} `json:"results"`
-	}
-	fetchURL := fmt.Sprintf("https://registry.hub.docker.com/v2/repositories/labring/%s/tags?page_size=100", r.Name)
-	tagSet := sets.Set[string]{}
-	if err := Retry(func() error {
-		for fetchURL != "" {
-			logger.Debug("fetch dockerhub url: %s", fetchURL)
-			data, err := Request(fetchURL, "GET", []byte(""), 0)
-			if err != nil {
-				return err
-			}
-			var tags TagList
-			if err = json.Unmarshal(data, &tags); err != nil {
-				return err
-			}
-			for _, tag := range tags.Results {
-				if strings.HasSuffix(tag.Name, "-amd64") {
-					continue
-				}
-				if strings.HasSuffix(tag.Name, "-arm64") {
-					continue
-				}
-				if stringInSlice(r.Name, specialRepos) {
-					lower := strings.HasPrefix(tag.Name, "v1.19")
-					power := strings.HasPrefix(tag.Name, "v1.2")
-					if !lower && !power {
-						continue
-					}
-				}
-				s, _ := filter(r.Filter)
-				switch s {
-				case FilterStrategyAll:
-					tagSet = tagSet.Insert(tag.Name)
-				case FilterStrategyPrefix:
-					if strings.HasPrefix(tag.Name, strings.TrimRight(r.Filter, "*")) {
-						tagSet = tagSet.Insert(tag.Name)
-					}
-				case FilterStrategySuffix:
-					if strings.HasSuffix(tag.Name, strings.TrimLeft(r.Filter, "*")) {
-						tagSet = tagSet.Insert(tag.Name)
-					}
-				case FilterStrategyContains:
-					if strings.Contains(tag.Name, strings.Trim(r.Filter, "*")) {
-						tagSet = tagSet.Insert(tag.Name)
-					}
-				case FilterStrategyEquals:
-					if tag.Name == r.Filter {
-						tagSet = tagSet.Insert(tag.Name)
-					}
-				case FilterStrategyNone:
-					logger.Error("filter error: %s", err.Error())
-				}
-
-			}
-			fetchURL = tags.Next
-		}
-		r.Versions = sets.List(tagSet)
-		return nil
-	}); err != nil {
-		logger.Error("fetch dockerhub url: %s error: %s", fetchURL, err.Error())
-		r.Versions = []string{}
-		return nil
-	}
-	return r.Versions
-}
-
-func fetchDockerHubAllRepo() (map[string][]RepoInfo, error) {
+func fetchDockerHubAllRepo() (map[string]RepoInfoList, error) {
 	type Repo struct {
 		Name string `json:"name"`
 	}
@@ -152,7 +48,7 @@ func fetchDockerHubAllRepo() (map[string][]RepoInfo, error) {
 
 	fetchURL := "https://hub.docker.com/v2/repositories/labring?page_size=10"
 
-	versions := make(map[string][]RepoInfo)
+	versions := make(map[string]RepoInfoList)
 	if err := Retry(func() error {
 		index := 0
 		for fetchURL != "" {
@@ -168,13 +64,19 @@ func fetchDockerHubAllRepo() (map[string][]RepoInfo, error) {
 			newRepos := make([]RepoInfo, 0)
 			for _, repo := range repositories.Results {
 				if stringInSlice(repo.Name, specialRepos) {
-					versions[repo.Name] = []RepoInfo{
-						{Name: repo.Name},
+					versions[repo.Name] = RepoInfoList{
+						Repos: []RepoInfo{
+							{Name: repo.Name, Filter: "^v(1\\.2[0-9]\\.[1-9]?[0-9]?)(\\.)?$"},
+						},
+						ByTagRegex: true,
 					}
 				} else if strings.HasPrefix(repo.Name, "sealos") {
 					if strings.HasPrefix(repo.Name, "sealos-cloud") || repo.Name == "sealos" || repo.Name == "sealos-patch" {
-						versions[repo.Name] = []RepoInfo{
-							{Name: repo.Name, Filter: "v*"},
+						versions[repo.Name] = RepoInfoList{
+							Repos: []RepoInfo{
+								{Name: repo.Name, Filter: "^v.*"},
+							},
+							ByTagRegex: true,
 						}
 					}
 					//logger.Warn("sealos container image repo is deprecated, please use sealos cloud repo")
@@ -182,7 +84,10 @@ func fetchDockerHubAllRepo() (map[string][]RepoInfo, error) {
 					newRepos = append(newRepos, RepoInfo{Name: repo.Name})
 				}
 			}
-			versions[fmt.Sprintf("image-%d", index)] = newRepos
+			versions[fmt.Sprintf("image-%d", index)] = RepoInfoList{
+				Repos:      newRepos,
+				ByTagRegex: false,
+			}
 			index++
 			fetchURL = repositories.Next
 		}
