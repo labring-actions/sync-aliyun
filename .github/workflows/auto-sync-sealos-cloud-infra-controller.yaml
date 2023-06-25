@@ -15,7 +15,7 @@ env:
 
 jobs:
   image-sync:
-    runs-on: cirun-gcp-amd64--${{ github.run_id }}
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout
