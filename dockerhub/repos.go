@@ -80,6 +80,13 @@ func fetchDockerHubAllRepo() (map[string]RepoInfoList, error) {
 						}
 					}
 					//logger.Warn("sealos container image repo is deprecated, please use sealos cloud repo")
+				} else if strings.HasPrefix(repo.Name, "laf") {
+					versions[repo.Name] = RepoInfoList{
+						Repos: []RepoInfo{
+							{Name: repo.Name, Filter: "^v.*"},
+						},
+						ByTagRegex: true,
+					}
 				} else {
 					newRepos = append(newRepos, RepoInfo{Name: repo.Name})
 				}
