@@ -9,4 +9,5 @@ docker.io:
     labring/docker-zot: []
     labring/zot: []
     labring/zot-upload: []
+    labring/docker-kubeblocks-tools: []
   tls-verify: false
