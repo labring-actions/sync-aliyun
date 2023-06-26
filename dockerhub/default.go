@@ -61,6 +61,9 @@ func Do() {
 		// Capture the range variables.
 		k, v := k, v
 		g.Go(func() error {
+			if len(v.Repos) == 0 {
+				return nil
+			}
 			if err = generatorSyncFile(syncDir, k, v); err != nil {
 				return fmt.Errorf("generatorSyncFile %s error: %w", k, err)
 			}
