@@ -1,0 +1,11 @@
+docker.io:
+  images:
+    labring/rocketmq-operator: []
+    labring/fluent-bit: []
+    labring/fluent-operator-containerd: []
+    labring/eck-operator: []
+    labring/kong-ingress-controller: []
+    labring/flink-kubernetes-operator: []
+    labring/mssql-server: []
+    labring/rabbitmq-cluster-operator: []
+  tls-verify: false

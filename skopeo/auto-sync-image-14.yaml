@@ -1,0 +1,5 @@
+docker.io:
+  images:
+    labring/docker-adminer: []
+    labring/bitnami-minio: []
+  tls-verify: false

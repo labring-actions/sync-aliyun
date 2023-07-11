@@ -1,0 +1,4 @@
+docker.io:
+  images-by-tag-regex:
+    labring/sealos-cloud-user-controller: ^v.*
+  tls-verify: false
