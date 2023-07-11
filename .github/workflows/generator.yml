@@ -32,3 +32,5 @@ jobs:
           reviewers: cuisongliu
           branch-suffix: short-commit-hash
           labels: sync-images
+          committer: sealos-ci-robot <sealos-ci-robot@sealos.io>
+          author: sealos-ci-robot <sealos-ci-robot@sealos.io>

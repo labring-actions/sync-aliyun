@@ -1,6 +1,0 @@
-docker.io:
-  images:
-    labring/etcdctl: []
-    labring/neuvector: []
-    labring/telepresence: []
-  tls-verify: false
