@@ -1,0 +1,33 @@
+name: auto-sync-sealos-cloud-costcenter-frontend.yaml 
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "skopeo/auto-sync-sealos-cloud-costcenter-frontend.yaml"
+      - ".github/workflows/auto-sync-sealos-cloud-costcenter-frontend.yaml"
+  schedule:
+    - cron: '0 16 * * *'
+  workflow_dispatch:
+
+env:
+  USERNAME: ${{ vars.A_REGISTRY_USERNAME }}
+  PASSWORD: ${{ secrets.A_REGISTRY_TOKEN }}
+
+jobs:
+  image-sync:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: check podman
+        run: |
+          sudo podman version
+
+      - name: sync images
+        run: |
+          sudo podman run -it --rm -v ${PWD}:/workspace -w /workspace quay.io/skopeo/stable:latest \
+          sync --src yaml --dest docker skopeo/auto-sync-sealos-cloud-costcenter-frontend.yaml ${{ vars.A_REGISTRY_NAME }}/${{ vars.A_REGISTRY_REPOSITORY }} \
+          --dest-username $USERNAME --dest-password "$PASSWORD" \
+          --keep-going --retry-times 2 --all

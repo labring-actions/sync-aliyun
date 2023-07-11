@@ -1,0 +1,6 @@
+docker.io:
+  images:
+    labring/ceph-csi-rbd: []
+    labring/ceph-csi-cephfs: []
+    labring/kubernetes-reflector: []
+  tls-verify: false

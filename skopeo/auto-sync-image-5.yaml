@@ -1,0 +1,13 @@
+docker.io:
+  images:
+    labring/wordpress: []
+    labring/apisix: []
+    labring/bitnami-mongodb: []
+    labring/bitnami-mongodb-sharded: []
+    labring/mongodb-community-operator: []
+    labring/traefik: []
+    labring/docker-kuboard: []
+    labring/tomcat: []
+    labring/crunchy-postgres-operator: []
+    labring/nginx: []
+  tls-verify: false

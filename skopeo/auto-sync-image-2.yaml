@@ -1,0 +1,13 @@
+docker.io:
+  images:
+    labring/flannel: []
+    labring/clickhouse: []
+    labring/kubernetes-dashboard: []
+    labring/lvscare: []
+    labring/kubelet: []
+    labring/athenaserving: []
+    labring/rook: []
+    labring/kubesphere: []
+    labring/endpoints-operator: []
+    labring/cilium: []
+  tls-verify: false

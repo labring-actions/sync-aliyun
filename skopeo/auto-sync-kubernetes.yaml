@@ -1,0 +1,4 @@
+docker.io:
+  images-by-tag-regex:
+    labring/kubernetes: ^v(1\.2[0-9]\.[1-9]?[0-9]?)(\.)?$
+  tls-verify: false

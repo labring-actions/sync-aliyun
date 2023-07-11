@@ -1,0 +1,13 @@
+docker.io:
+  images:
+    labring/elastic: []
+    labring/k8tz: []
+    labring/gpu-operator: []
+    labring/kafka-exporter: []
+    labring/kafka-operator: []
+    labring/metrics-server: []
+    labring/kube-prometheus-stack: []
+    labring/minio: []
+    labring/redis-exporter: []
+    labring/skywalking: []
+  tls-verify: false

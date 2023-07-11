@@ -1,0 +1,6 @@
+docker.io:
+  images:
+    labring/contour: []
+    labring/harbor: []
+    labring/gloo: []
+  tls-verify: false
