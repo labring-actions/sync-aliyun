@@ -1,4 +1,6 @@
 docker.io:
   images:
     labring/bond-cni: []
+    labring/podman: []
+    labring/skopeo: []
   tls-verify: false
