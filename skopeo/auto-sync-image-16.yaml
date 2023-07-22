@@ -3,4 +3,5 @@ docker.io:
     labring/bond-cni: []
     labring/podman: []
     labring/skopeo: []
+    labring/zadig: []
   tls-verify: false
