@@ -4,4 +4,5 @@ docker.io:
     labring/podman: []
     labring/skopeo: []
     labring/zadig: []
+    labring/gitlab-operator: []
   tls-verify: false
