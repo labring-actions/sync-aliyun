@@ -1,0 +1,4 @@
+docker.io:
+  images-by-tag-regex:
+    labring/sealos-cloud-licenseissuer-controller: ^v.*
+  tls-verify: false
