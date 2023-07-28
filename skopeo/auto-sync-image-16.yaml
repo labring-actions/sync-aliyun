@@ -5,4 +5,5 @@ docker.io:
     labring/skopeo: []
     labring/zadig: []
     labring/gitlab-operator: []
+    labring/higress: []
   tls-verify: false
