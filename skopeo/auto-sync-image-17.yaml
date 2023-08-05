@@ -1,4 +1,6 @@
 docker.io:
   images:
     labring/csi-driver-nfs: []
+    labring/gitlab-runner: []
+    labring/gitlab: []
   tls-verify: false
