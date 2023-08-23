@@ -1,0 +1,12 @@
+docker.io:
+  images:
+    labring/promtail: []
+    labring/sonarqube: []
+    labring/discourse: []
+    labring/jenkins-operator: []
+    labring/nextcloud: []
+    labring/argo-rollouts: []
+    labring/openebs-nfs: []
+    labring/argo-workflows: []
+    labring/teleport: []
+  tls-verify: false
