@@ -5,4 +5,7 @@ docker.io:
     labring/gitlab: []
     labring/kyverno: []
     labring/piraeus-operator: []
+    labring/loki-stack: []
+    labring/grafana: []
+    labring/grafana-operator: []
   tls-verify: false
