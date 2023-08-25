@@ -1,4 +1,7 @@
 docker.io:
+  images:
+    sealos-cloud-node-controller:
+    - latest
   images-by-tag-regex:
-    labring/sealos-cloud-node-controller: ^v.*
+    sealos-cloud-node-controller: ^v.*
   tls-verify: false

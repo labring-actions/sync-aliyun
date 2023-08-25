@@ -1,13 +1,11 @@
 docker.io:
   images:
-    labring/flannel: []
-    labring/clickhouse: []
-    labring/kubernetes-dashboard: []
-    labring/lvscare: []
-    labring/kubelet: []
-    labring/athenaserving: []
-    labring/rook: []
-    labring/kubesphere: []
-    labring/endpoints-operator: []
-    labring/cilium: []
+    jenkins-operator: []
+    kong-ingress-controller: []
+    lvscare: []
+    openebs: []
+    oracle-mysql-operator: []
+    ot-redis-cluster: []
+    prometheus-adapter: []
+    zot: []
   tls-verify: false

@@ -1,6 +1,11 @@
 docker.io:
   images:
-    labring/contour: []
-    labring/harbor: []
-    labring/gloo: []
+    cert-manager: []
+    chaos-mesh-crio: []
+    cilium: []
+    iomesh: []
+    neuvector: []
+    rancher: []
+    wordpress: []
+    zadig: []
   tls-verify: false

@@ -1,4 +1,7 @@
 docker.io:
+  images:
+    sealos:
+    - latest
   images-by-tag-regex:
-    labring/sealos: ^v.*
+    sealos: ^v.*
   tls-verify: false

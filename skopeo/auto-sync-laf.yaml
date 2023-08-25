@@ -1,4 +1,7 @@
 docker.io:
+  images:
+    laf:
+    - latest
   images-by-tag-regex:
-    labring/laf: ^v.*
+    laf: ^v.*
   tls-verify: false

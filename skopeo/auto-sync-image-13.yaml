@@ -1,6 +1,10 @@
 docker.io:
   images:
-    labring/ceph-csi-rbd: []
-    labring/ceph-csi-cephfs: []
-    labring/kubernetes-reflector: []
+    docker-adminer: []
+    gitlab: []
+    kafka-operator: []
+    longhorn: []
+    memcached: []
+    neuvector-docker: []
+    traefik: []
   tls-verify: false

@@ -1,0 +1,10 @@
+docker.io:
+  images:
+    flannel: []
+    fluent-bit: []
+    gitea: []
+    kubeblocks: []
+    openebs-lvm: []
+    promtail: []
+    tekton: []
+  tls-verify: false

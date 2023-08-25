@@ -1,13 +1,11 @@
 docker.io:
   images:
-    labring/fluxcd: []
-    labring/weave-gitops: []
-    labring/rancher: []
-    labring/kubevela: []
-    labring/kustomize: []
-    labring/affine: []
-    labring/trivy-operator: []
-    labring/memcached: []
-    labring/nfs-subdir-external-provisioner: []
-    labring/code-server: []
+    calico: []
+    chaos-mesh: []
+    endpoints-operator: []
+    etcdctl: []
+    kuboard: []
+    skopeo: []
+    teleport: []
+    weave-gitops: []
   tls-verify: false

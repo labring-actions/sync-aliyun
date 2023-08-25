@@ -1,4 +1,7 @@
 docker.io:
+  images:
+    sealos-cloud-desktop-frontend:
+    - latest
   images-by-tag-regex:
-    labring/sealos-cloud-desktop-frontend: ^v.*
+    sealos-cloud-desktop-frontend: ^v.*
   tls-verify: false

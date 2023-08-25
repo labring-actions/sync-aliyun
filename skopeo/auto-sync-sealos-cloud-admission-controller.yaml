@@ -1,4 +1,7 @@
 docker.io:
+  images:
+    sealos-cloud-admission-controller:
+    - latest
   images-by-tag-regex:
-    labring/sealos-cloud-admission-controller: ^v.*
+    sealos-cloud-admission-controller: ^v.*
   tls-verify: false

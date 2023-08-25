@@ -1,7 +1,7 @@
 docker.io:
   images:
-    sealos-cloud-adminer-frontend:
+    sealos-metering-controller:
     - latest
   images-by-tag-regex:
-    sealos-cloud-adminer-frontend: ^v.*
+    sealos-metering-controller: ^v.*
   tls-verify: false
