@@ -27,21 +27,6 @@ import (
 	"strings"
 )
 
-const tmpl = `docker.io:
-  {{- if .ByTagRegex }}
-  images-by-tag-regex:
-    {{- range .Repos }}
-    labring/{{ .Name }}: {{ .Filter }}
-    {{- end }}
-  {{- else }}
-  images:
-    {{- range .Repos }}
-    labring/{{ .Name }}: []
-    {{- end }}
-  {{- end }}
-  tls-verify: false
-`
-
 const workflowTmpl = `name: {{ .SYNC_FILE_NAME }} 
 on:
   push:
@@ -98,14 +83,12 @@ func autoRemoveGenerator(dir string) error {
 	return nil
 }
 
-func generatorSyncFile(dir, key string, repos RepoInfoList) error {
-	f, err := os.Create(path.Join(dir, fmt.Sprintf("%s-%s.yaml", prefix, key)))
+func generatorSyncFile(dir, key string, repos SkopeoList) error {
+	data, err := yaml.Marshal(&repos)
 	if err != nil {
 		return err
 	}
-	defer f.Close()
-	t := template.Must(template.New("repos").Parse(tmpl))
-	err = t.Execute(f, repos)
+	err = os.WriteFile(path.Join(dir, fmt.Sprintf("%s-%s.yaml", prefix, key)), data, 0644)
 	if err != nil {
 		return err
 	}

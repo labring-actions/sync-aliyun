@@ -23,20 +23,21 @@ import (
 	"strings"
 )
 
-type RepoInfo struct {
-	Name     string   `json:"name"`
-	Versions []string `json:"versions"`
-	Filter   string   `json:"filter"`
+type registryName string
+
+const defaultRegistryName registryName = "docker.io"
+
+type registrySyncConfig struct {
+	Images           map[string][]string `yaml:"images,omitempty"`              // Images map images name to slices with the images' tags
+	ImagesByTagRegex map[string]string   `yaml:"images-by-tag-regex,omitempty"` // Images map images name to regular expression with the images' tags
+	TLSVerify        bool                `yaml:"tls-verify"`                    // TLS verification mode (enabled by default)
 }
 
-type RepoInfoList struct {
-	Repos      []RepoInfo `json:"repos"`
-	ByTagRegex bool
-}
+type SkopeoList map[registryName]registrySyncConfig
 
 var specialRepos = []string{"kubernetes", "kubernetes-crio", "kubernetes-docker"}
 
-func fetchDockerHubAllRepo() (map[string]RepoInfoList, error) {
+func fetchDockerHubAllRepo() (map[string]SkopeoList, error) {
 	type Repo struct {
 		Name string `json:"name"`
 	}
@@ -48,9 +49,9 @@ func fetchDockerHubAllRepo() (map[string]RepoInfoList, error) {
 
 	fetchURL := "https://hub.docker.com/v2/repositories/labring?page_size=10"
 
-	versions := make(map[string]RepoInfoList)
+	versions := make(map[string]SkopeoList)
+	defaultRepos := make([]string, 0)
 	if err := Retry(func() error {
-		index := 0
 		for fetchURL != "" {
 			logger.Debug("fetch dockerhub url: %s", fetchURL)
 			data, err := Request(fetchURL, "GET", []byte(""), 0)
@@ -61,59 +62,58 @@ func fetchDockerHubAllRepo() (map[string]RepoInfoList, error) {
 			if err = json.Unmarshal(data, &repositories); err != nil {
 				return err
 			}
-			newRepos := make([]RepoInfo, 0)
 			for _, repo := range repositories.Results {
 				if stringInSlice(repo.Name, specialRepos) {
-					versions[repo.Name] = RepoInfoList{
-						Repos: []RepoInfo{
-							{Name: repo.Name, Filter: "^v(1\\.2[0-9]\\.[1-9]?[0-9]?)(\\.)?$"},
+					versions[repo.Name] = SkopeoList{
+						defaultRegistryName: {
+							Images:           nil,
+							ImagesByTagRegex: map[string]string{repo.Name: "^v(1\\.2[0-9]\\.[1-9]?[0-9]?)(\\.)?$"},
+							TLSVerify:        false,
 						},
-						ByTagRegex: true,
 					}
 				} else if strings.HasPrefix(repo.Name, "sealos") {
-					if strings.HasPrefix(repo.Name, "sealos-cloud") || repo.Name == "sealos" || repo.Name == "sealos-patch" {
-						versions[repo.Name] = RepoInfoList{
-							Repos: []RepoInfo{
-								{Name: repo.Name, Filter: "^v.*"},
-							},
-							ByTagRegex: true,
-						}
-						versions[fmt.Sprintf("%s-%s", repo.Name, "latest")] = RepoInfoList{
-							Repos: []RepoInfo{
-								{Name: repo.Name, Versions: []string{"latest"}},
-							},
-							ByTagRegex: false,
-						}
+					versions[repo.Name] = SkopeoList{
+						defaultRegistryName: {
+							Images:           map[string][]string{repo.Name: {"latest"}},
+							ImagesByTagRegex: map[string]string{repo.Name: "^v.*"},
+							TLSVerify:        false,
+						},
 					}
-					//logger.Warn("sealos container image repo is deprecated, please use sealos cloud repo")
 				} else if strings.HasPrefix(repo.Name, "laf") {
-					versions[repo.Name] = RepoInfoList{
-						Repos: []RepoInfo{
-							{Name: repo.Name, Filter: "^v.*"},
+					versions[repo.Name] = SkopeoList{
+						defaultRegistryName: {
+							Images:           map[string][]string{repo.Name: {"latest"}},
+							ImagesByTagRegex: map[string]string{repo.Name: "^v.*"},
+							TLSVerify:        false,
 						},
-						ByTagRegex: true,
-					}
-					versions[fmt.Sprintf("%s-%s", repo.Name, "latest")] = RepoInfoList{
-						Repos: []RepoInfo{
-							{Name: repo.Name, Versions: []string{"latest"}},
-						},
-						ByTagRegex: false,
 					}
 				} else {
-					newRepos = append(newRepos, RepoInfo{Name: repo.Name})
+					defaultRepos = append(defaultRepos, repo.Name)
 				}
 			}
-			versions[fmt.Sprintf("image-%d", index)] = RepoInfoList{
-				Repos:      newRepos,
-				ByTagRegex: false,
-			}
-			index++
 			fetchURL = repositories.Next
 		}
 		return nil
 	}); err != nil {
 		logger.Error("get dockerhub repo error: %s", err.Error())
 		return nil, err
+	}
+	count := 20
+	defaultImages := make([]map[string][]string, count)
+	for i, repo := range defaultRepos {
+		index := i % count
+		if defaultImages[index] == nil {
+			defaultImages[index] = make(map[string][]string)
+		}
+		defaultImages[index][repo] = []string{}
+	}
+	for i, images := range defaultImages {
+		versions[fmt.Sprintf("image-%d", i)] = SkopeoList{
+			defaultRegistryName: {
+				Images:    images,
+				TLSVerify: false,
+			},
+		}
 	}
 	return versions, nil
 }
