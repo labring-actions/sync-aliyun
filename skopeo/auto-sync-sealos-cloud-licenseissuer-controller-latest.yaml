@@ -1,0 +1,4 @@
+docker.io:
+  images:
+    labring/sealos-cloud-licenseissuer-controller: []
+  tls-verify: false
