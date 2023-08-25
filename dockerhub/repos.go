@@ -37,15 +37,22 @@ type SkopeoList map[registryName]registrySyncConfig
 
 var specialRepos = []string{"kubernetes", "kubernetes-crio", "kubernetes-docker"}
 
-func fetchDockerHubAllRepo() (map[string]SkopeoList, error) {
-	type Repo struct {
-		Name string `json:"name"`
-	}
+const defaultRepo = "labring"
 
-	type Repositories struct {
-		Results []Repo `json:"results"`
-		Next    string `json:"next"`
-	}
+type Repo struct {
+	Name string `json:"name"`
+}
+
+type Repositories struct {
+	Results []Repo `json:"results"`
+	Next    string `json:"next"`
+}
+
+func (r *Repo) getName() string {
+	return fmt.Sprintf("%s/%s", defaultRepo, r.Name)
+}
+
+func fetchDockerHubAllRepo() (map[string]SkopeoList, error) {
 
 	fetchURL := "https://hub.docker.com/v2/repositories/labring?page_size=10"
 
@@ -67,28 +74,28 @@ func fetchDockerHubAllRepo() (map[string]SkopeoList, error) {
 					versions[repo.Name] = SkopeoList{
 						defaultRegistryName: {
 							Images:           nil,
-							ImagesByTagRegex: map[string]string{repo.Name: "^v(1\\.2[0-9]\\.[1-9]?[0-9]?)(\\.)?$"},
+							ImagesByTagRegex: map[string]string{repo.getName(): "^v(1\\.2[0-9]\\.[1-9]?[0-9]?)(\\.)?$"},
 							TLSVerify:        false,
 						},
 					}
 				} else if strings.HasPrefix(repo.Name, "sealos") {
 					versions[repo.Name] = SkopeoList{
 						defaultRegistryName: {
-							Images:           map[string][]string{repo.Name: {"latest"}},
-							ImagesByTagRegex: map[string]string{repo.Name: "^v.*"},
+							Images:           map[string][]string{repo.getName(): {"latest"}},
+							ImagesByTagRegex: map[string]string{repo.getName(): "^v.*"},
 							TLSVerify:        false,
 						},
 					}
 				} else if strings.HasPrefix(repo.Name, "laf") {
 					versions[repo.Name] = SkopeoList{
 						defaultRegistryName: {
-							Images:           map[string][]string{repo.Name: {"latest"}},
-							ImagesByTagRegex: map[string]string{repo.Name: "^v.*"},
+							Images:           map[string][]string{repo.getName(): {"latest"}},
+							ImagesByTagRegex: map[string]string{repo.getName(): "^v.*"},
 							TLSVerify:        false,
 						},
 					}
 				} else {
-					defaultRepos = append(defaultRepos, repo.Name)
+					defaultRepos = append(defaultRepos, repo.getName())
 				}
 			}
 			fetchURL = repositories.Next
