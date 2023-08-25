@@ -78,6 +78,12 @@ func fetchDockerHubAllRepo() (map[string]RepoInfoList, error) {
 							},
 							ByTagRegex: true,
 						}
+						versions[fmt.Sprintf("%s-%s", repo.Name, "latest")] = RepoInfoList{
+							Repos: []RepoInfo{
+								{Name: repo.Name, Versions: []string{"latest"}},
+							},
+							ByTagRegex: false,
+						}
 					}
 					//logger.Warn("sealos container image repo is deprecated, please use sealos cloud repo")
 				} else if strings.HasPrefix(repo.Name, "laf") {
@@ -86,6 +92,12 @@ func fetchDockerHubAllRepo() (map[string]RepoInfoList, error) {
 							{Name: repo.Name, Filter: "^v.*"},
 						},
 						ByTagRegex: true,
+					}
+					versions[fmt.Sprintf("%s-%s", repo.Name, "latest")] = RepoInfoList{
+						Repos: []RepoInfo{
+							{Name: repo.Name, Versions: []string{"latest"}},
+						},
+						ByTagRegex: false,
 					}
 				} else {
 					newRepos = append(newRepos, RepoInfo{Name: repo.Name})
