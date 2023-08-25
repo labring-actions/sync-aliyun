@@ -1,0 +1,7 @@
+docker.io:
+  images:
+    labring/sealos-cluster-controller:
+    - latest
+  images-by-tag-regex:
+    labring/sealos-cluster-controller: ^v.*
+  tls-verify: false

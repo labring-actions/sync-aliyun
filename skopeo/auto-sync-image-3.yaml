@@ -1,12 +1,11 @@
 docker.io:
   images:
-    labring/deepflow: []
-    labring/argocd: []
-    labring/istio: []
-    labring/metallb: []
-    labring/longhorn: []
-    labring/tidb-operator: []
-    labring/kube-ovn: []
-    labring/docker-cni-plugins: []
-    labring/golang-vim-dev: []
+    labring/flink-kubernetes-operator: []
+    labring/ingress-nginx: []
+    labring/jenkins: []
+    labring/karmada: []
+    labring/kubelet: []
+    labring/nextcloud: []
+    labring/openebs-mayastor: []
+    labring/zot-upload: []
   tls-verify: false

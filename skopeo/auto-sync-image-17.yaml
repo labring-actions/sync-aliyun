@@ -1,11 +1,10 @@
 docker.io:
   images:
-    labring/csi-driver-nfs: []
-    labring/gitlab-runner: []
-    labring/gitlab: []
-    labring/kyverno: []
-    labring/piraeus-operator: []
-    labring/loki-stack: []
+    labring/bitnami-zookeeper: []
+    labring/golang-vim-dev: []
     labring/grafana: []
-    labring/grafana-operator: []
+    labring/harbor: []
+    labring/local-path-provisioner: []
+    labring/nginx: []
+    labring/redis-exporter: []
   tls-verify: false

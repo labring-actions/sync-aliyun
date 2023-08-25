@@ -1,13 +1,11 @@
 docker.io:
   images:
-    labring/elastic: []
-    labring/k8tz: []
-    labring/gpu-operator: []
-    labring/kafka-exporter: []
-    labring/kafka-operator: []
-    labring/metrics-server: []
-    labring/kube-prometheus-stack: []
-    labring/minio: []
-    labring/redis-exporter: []
-    labring/skywalking: []
+    labring/coredns: []
+    labring/discourse: []
+    labring/docker-zot: []
+    labring/eck-operator: []
+    labring/kubernetes-dashboard: []
+    labring/kubevirt: []
+    labring/nerdctl: []
+    labring/openebs-cstor: []
   tls-verify: false

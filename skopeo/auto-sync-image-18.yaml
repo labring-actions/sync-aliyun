@@ -1,12 +1,10 @@
 docker.io:
   images:
-    labring/promtail: []
-    labring/sonarqube: []
-    labring/discourse: []
-    labring/jenkins-operator: []
-    labring/nextcloud: []
-    labring/argo-rollouts: []
-    labring/openebs-nfs: []
-    labring/argo-workflows: []
-    labring/teleport: []
+    labring/docker-casbin: []
+    labring/gloo: []
+    labring/grafana-operator: []
+    labring/kube-vip: []
+    labring/mongodb-single: []
+    labring/rocketmq-operator: []
+    labring/skywalking: []
   tls-verify: false

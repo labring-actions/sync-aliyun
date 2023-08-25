@@ -1,5 +1,10 @@
 docker.io:
   images:
-    labring/docker-adminer: []
     labring/bitnami-minio: []
+    labring/docker-kuboard: []
+    labring/kyverno: []
+    labring/metrics-server: []
+    labring/nfs-subdir-external-provisioner: []
+    labring/sriov-network-operator: []
+    labring/tidb-operator: []
   tls-verify: false

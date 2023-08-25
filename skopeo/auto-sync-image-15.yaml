@@ -1,13 +1,10 @@
 docker.io:
   images:
     labring/bitnami-kafka: []
-    labring/bitnami-mysql: []
-    labring/bitnami-zookeeper: []
-    labring/mongodb-single: []
-    labring/kubeblocks: []
-    labring/openim: []
-    labring/docker-zot: []
-    labring/zot: []
-    labring/zot-upload: []
-    labring/docker-kubeblocks-tools: []
+    labring/cni-plugin: []
+    labring/code-server: []
+    labring/kube-ovn: []
+    labring/kube-prometheus-stack: []
+    labring/piraeus-operator: []
+    labring/tomcat: []
   tls-verify: false
