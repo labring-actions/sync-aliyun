@@ -1,11 +1,11 @@
 docker.io:
   images:
-    labring/argo-workflows: []
-    labring/chaos-mesh-containerd: []
-    labring/docker-terminal: []
-    labring/fluxcd: []
-    labring/kubegems: []
-    labring/kubesphere: []
+    labring/gitlab-runner: []
+    labring/kubernetes-reflector: []
+    labring/kubevirt: []
+    labring/metallb: []
+    labring/mongodb-community-operator: []
     labring/mysql-operator: []
-    labring/podman: []
+    labring/neuvector-containerd: []
+    labring/trivy-operator: []
   tls-verify: false

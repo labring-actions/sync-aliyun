@@ -1,11 +1,12 @@
 docker.io:
   images:
-    labring/flink-kubernetes-operator: []
+    labring/apisix: []
+    labring/deepflow: []
+    labring/docker-casbin: []
+    labring/gitlab-operator: []
     labring/ingress-nginx: []
-    labring/jenkins: []
-    labring/karmada: []
-    labring/kubelet: []
-    labring/nextcloud: []
-    labring/openebs-mayastor: []
-    labring/zot-upload: []
+    labring/kube-state-metrics: []
+    labring/kubevela: []
+    labring/telepresence: []
+    labring/uptime-kuma: []
   tls-verify: false

@@ -1,11 +1,12 @@
 docker.io:
   images:
-    labring/bitnami-redis-cluster: []
-    labring/clickhouse: []
-    labring/fluent-operator-containerd: []
+    labring/argo-workflows: []
+    labring/chaos-mesh-containerd: []
+    labring/docker-terminal: []
+    labring/fluxcd: []
     labring/helm: []
-    labring/openebs-jiva: []
-    labring/openim: []
-    labring/sonarqube: []
-    labring/zalando-postgres-operator: []
+    labring/kube-ovn: []
+    labring/kubegems: []
+    labring/kubesphere: []
+    labring/podman: []
   tls-verify: false

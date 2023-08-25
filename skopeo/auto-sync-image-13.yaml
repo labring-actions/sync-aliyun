@@ -1,10 +1,11 @@
 docker.io:
   images:
-    labring/docker-adminer: []
-    labring/gitlab: []
-    labring/kafka-operator: []
-    labring/longhorn: []
-    labring/memcached: []
-    labring/neuvector-docker: []
-    labring/traefik: []
+    labring/cilium: []
+    labring/flannel: []
+    labring/fluent-bit: []
+    labring/gitea: []
+    labring/kubeblocks: []
+    labring/openebs-lvm: []
+    labring/promtail: []
+    labring/tekton: []
   tls-verify: false

@@ -1,11 +1,11 @@
 docker.io:
   images:
-    labring/apisix: []
-    labring/deepflow: []
-    labring/elastic: []
-    labring/gitlab-operator: []
-    labring/kube-state-metrics: []
-    labring/kubevela: []
-    labring/telepresence: []
-    labring/uptime-kuma: []
+    labring/athenaserving: []
+    labring/bitnami-kafka: []
+    labring/cni-plugin: []
+    labring/code-server: []
+    labring/kube-ovn: []
+    labring/piraeus-operator: []
+    labring/tomcat: []
+    labring/velero: []
   tls-verify: false

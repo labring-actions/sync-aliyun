@@ -1,11 +1,11 @@
 docker.io:
   images:
-    labring/argo-rollouts: []
-    labring/athenaserving: []
-    labring/awx-operator: []
-    labring/docker-kubeblocks-tools: []
+    labring/argocd: []
+    labring/bitnami-etcd: []
+    labring/bitnami-mongodb: []
+    labring/ceph-csi-rbd: []
+    labring/higress: []
+    labring/kustomize: []
     labring/minio-operator: []
-    labring/mssql-server: []
-    labring/registry: []
-    labring/velero: []
+    labring/tekton: []
   tls-verify: false

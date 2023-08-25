@@ -1,10 +1,11 @@
 docker.io:
   images:
-    labring/gitlab-runner: []
-    labring/kafka-exporter: []
-    labring/kubernetes-reflector: []
-    labring/metallb: []
-    labring/mongodb-community-operator: []
-    labring/neuvector-containerd: []
-    labring/trivy-operator: []
+    labring/docker-casbin: []
+    labring/endpoints-operator: []
+    labring/gloo: []
+    labring/grafana-operator: []
+    labring/kube-vip: []
+    labring/kuboard: []
+    labring/mongodb-single: []
+    labring/rocketmq-operator: []
   tls-verify: false

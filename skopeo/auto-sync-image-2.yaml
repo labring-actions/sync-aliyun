@@ -1,11 +1,12 @@
 docker.io:
   images:
-    labring/jenkins-operator: []
-    labring/kong-ingress-controller: []
-    labring/lvscare: []
+    labring/chaos-mesh-crio: []
+    labring/cilium: []
+    labring/golang-vim-dev: []
+    labring/iomesh: []
+    labring/neuvector: []
     labring/openebs: []
-    labring/oracle-mysql-operator: []
-    labring/ot-redis-cluster: []
-    labring/prometheus-adapter: []
-    labring/zot: []
+    labring/rancher: []
+    labring/wordpress: []
+    labring/zadig: []
   tls-verify: false

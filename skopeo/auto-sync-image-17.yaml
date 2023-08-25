@@ -1,10 +1,11 @@
 docker.io:
   images:
-    labring/bitnami-zookeeper: []
-    labring/golang-vim-dev: []
-    labring/grafana: []
-    labring/harbor: []
-    labring/local-path-provisioner: []
-    labring/nginx: []
-    labring/redis-exporter: []
+    labring/flink-kubernetes-operator: []
+    labring/jenkins: []
+    labring/karmada: []
+    labring/kubelet: []
+    labring/metallb: []
+    labring/nextcloud: []
+    labring/openebs-mayastor: []
+    labring/zot-upload: []
   tls-verify: false

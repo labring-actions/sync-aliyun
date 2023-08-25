@@ -1,11 +1,11 @@
 docker.io:
   images:
-    labring/bond-cni: []
-    labring/helmfile: []
-    labring/loki: []
-    labring/multus-cni: []
-    labring/openebs-nfs: []
-    labring/rabbitmq-cluster-operator: []
+    labring/affine: []
+    labring/bitnami-mongodb-sharded: []
+    labring/ceph-csi-cephfs: []
+    labring/csi-driver-nfs: []
+    labring/istio: []
+    labring/neuvector-crio: []
     labring/redis-operator: []
-    labring/rook: []
+    labring/zalando-postgres-operator: []
   tls-verify: false
