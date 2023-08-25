@@ -1,11 +1,12 @@
 docker.io:
   images:
+    labring/chaos-mesh: []
     labring/coredns: []
-    labring/discourse: []
-    labring/docker-zot: []
-    labring/eck-operator: []
-    labring/kubernetes-dashboard: []
-    labring/kubevirt: []
-    labring/nerdctl: []
-    labring/openebs-cstor: []
+    labring/docker-cni-plugins: []
+    labring/endpoints-operator: []
+    labring/etcdctl: []
+    labring/kuboard: []
+    labring/skopeo: []
+    labring/teleport: []
+    labring/weave-gitops: []
   tls-verify: false

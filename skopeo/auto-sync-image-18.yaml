@@ -1,10 +1,11 @@
 docker.io:
   images:
-    labring/docker-casbin: []
-    labring/gloo: []
-    labring/grafana-operator: []
-    labring/kube-vip: []
-    labring/mongodb-single: []
-    labring/rocketmq-operator: []
-    labring/skywalking: []
+    labring/argo-rollouts: []
+    labring/athenaserving: []
+    labring/awx-operator: []
+    labring/docker-kubeblocks-tools: []
+    labring/longhorn: []
+    labring/mssql-server: []
+    labring/registry: []
+    labring/velero: []
   tls-verify: false

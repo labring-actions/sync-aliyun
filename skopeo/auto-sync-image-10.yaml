@@ -1,10 +1,11 @@
 docker.io:
   images:
-    labring/argocd: []
-    labring/bitnami-etcd: []
-    labring/bitnami-mongodb: []
-    labring/ceph-csi-rbd: []
-    labring/higress: []
-    labring/k8tz: []
-    labring/kustomize: []
+    labring/bitnami-mysql: []
+    labring/contour: []
+    labring/crunchy-postgres-operator: []
+    labring/docker-cni-plugins: []
+    labring/k9s: []
+    labring/loki: []
+    labring/loki-stack: []
+    labring/rook: []
   tls-verify: false

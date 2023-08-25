@@ -1,10 +1,11 @@
 docker.io:
   images:
-    labring/bitnami-mysql: []
-    labring/contour: []
-    labring/crunchy-postgres-operator: []
-    labring/docker-cni-plugins: []
-    labring/k9s: []
-    labring/loki-stack: []
-    labring/minio: []
+    labring/istio: []
+    labring/jenkins-operator: []
+    labring/kong-ingress-controller: []
+    labring/lvscare: []
+    labring/oracle-mysql-operator: []
+    labring/ot-redis-cluster: []
+    labring/prometheus-adapter: []
+    labring/zot: []
   tls-verify: false

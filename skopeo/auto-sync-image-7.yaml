@@ -1,11 +1,11 @@
 docker.io:
   images:
     labring/calico: []
-    labring/chaos-mesh: []
-    labring/endpoints-operator: []
-    labring/etcdctl: []
-    labring/kuboard: []
-    labring/skopeo: []
-    labring/teleport: []
-    labring/weave-gitops: []
+    labring/docker-adminer: []
+    labring/gitlab: []
+    labring/longhorn: []
+    labring/memcached: []
+    labring/neuvector-docker: []
+    labring/oracle-mysql-operator: []
+    labring/traefik: []
   tls-verify: false

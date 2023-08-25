@@ -1,10 +1,11 @@
 docker.io:
   images:
-    labring/affine: []
-    labring/bitnami-mongodb-sharded: []
-    labring/ceph-csi-cephfs: []
-    labring/csi-driver-nfs: []
-    labring/gpu-operator: []
-    labring/istio: []
-    labring/neuvector-crio: []
+    labring/bitnami-zookeeper: []
+    labring/golang-vim-dev: []
+    labring/grafana: []
+    labring/harbor: []
+    labring/kubegems: []
+    labring/kubesphere: []
+    labring/local-path-provisioner: []
+    labring/nginx: []
   tls-verify: false

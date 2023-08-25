@@ -1,10 +1,11 @@
 docker.io:
   images:
-    labring/flannel: []
-    labring/fluent-bit: []
-    labring/gitea: []
-    labring/kubeblocks: []
-    labring/openebs-lvm: []
-    labring/promtail: []
-    labring/tekton: []
+    labring/bond-cni: []
+    labring/helmfile: []
+    labring/loki: []
+    labring/multus-cni: []
+    labring/openebs-nfs: []
+    labring/rabbitmq-cluster-operator: []
+    labring/rook: []
+    labring/tidb-operator: []
   tls-verify: false

@@ -1,11 +1,11 @@
 docker.io:
   images:
+    labring/bitnami-minio: []
     labring/cert-manager: []
-    labring/chaos-mesh-crio: []
-    labring/cilium: []
-    labring/iomesh: []
-    labring/neuvector: []
-    labring/rancher: []
-    labring/wordpress: []
-    labring/zadig: []
+    labring/docker-kuboard: []
+    labring/jenkins: []
+    labring/kyverno: []
+    labring/nfs-subdir-external-provisioner: []
+    labring/sriov-network-operator: []
+    labring/tidb-operator: []
   tls-verify: false

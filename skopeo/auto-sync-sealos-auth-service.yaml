@@ -1,7 +1,0 @@
-docker.io:
-  images:
-    labring/sealos-auth-service:
-    - latest
-  images-by-tag-regex:
-    labring/sealos-auth-service: ^v.*
-  tls-verify: false
