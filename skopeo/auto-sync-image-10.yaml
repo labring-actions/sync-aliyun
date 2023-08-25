@@ -1,12 +1,10 @@
 docker.io:
   images:
-    labring/kube-state-metrics: []
+    labring/argocd: []
     labring/bitnami-etcd: []
-    labring/neuvector-crio: []
-    labring/neuvector-containerd: []
-    labring/neuvector-docker: []
-    labring/sriov-network-operator: []
-    labring/cni-plugin: []
-    labring/k9s: []
-    labring/local-path-provisioner: []
+    labring/bitnami-mongodb: []
+    labring/ceph-csi-rbd: []
+    labring/higress: []
+    labring/k8tz: []
+    labring/kustomize: []
   tls-verify: false

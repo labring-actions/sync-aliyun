@@ -1,11 +1,11 @@
 docker.io:
   images:
-    labring/rocketmq-operator: []
-    labring/fluent-bit: []
-    labring/fluent-operator-containerd: []
-    labring/eck-operator: []
-    labring/kong-ingress-controller: []
-    labring/flink-kubernetes-operator: []
-    labring/mssql-server: []
-    labring/rabbitmq-cluster-operator: []
+    labring/argo-workflows: []
+    labring/chaos-mesh-containerd: []
+    labring/docker-terminal: []
+    labring/fluxcd: []
+    labring/kubegems: []
+    labring/kubesphere: []
+    labring/mysql-operator: []
+    labring/podman: []
   tls-verify: false

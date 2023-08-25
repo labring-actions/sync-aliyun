@@ -1,9 +1,10 @@
 docker.io:
   images:
-    labring/bond-cni: []
-    labring/podman: []
-    labring/skopeo: []
-    labring/zadig: []
-    labring/gitlab-operator: []
-    labring/higress: []
+    labring/bitnami-mysql: []
+    labring/contour: []
+    labring/crunchy-postgres-operator: []
+    labring/docker-cni-plugins: []
+    labring/k9s: []
+    labring/loki-stack: []
+    labring/minio: []
   tls-verify: false

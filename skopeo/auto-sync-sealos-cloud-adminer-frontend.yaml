@@ -1,4 +1,7 @@
 docker.io:
+  images:
+    labring/sealos-cloud-adminer-frontend:
+    - latest
   images-by-tag-regex:
     labring/sealos-cloud-adminer-frontend: ^v.*
   tls-verify: false

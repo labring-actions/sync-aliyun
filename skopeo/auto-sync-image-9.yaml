@@ -1,13 +1,11 @@
 docker.io:
   images:
-    labring/gitea: []
-    labring/openebs-jiva: []
-    labring/openebs-cstor: []
-    labring/prometheus-adapter: []
-    labring/openebs-mayastor: []
-    labring/awx-operator: []
-    labring/multus-cni: []
-    labring/chaos-mesh-containerd: []
-    labring/chaos-mesh: []
-    labring/chaos-mesh-crio: []
+    labring/apisix: []
+    labring/deepflow: []
+    labring/elastic: []
+    labring/gitlab-operator: []
+    labring/kube-state-metrics: []
+    labring/kubevela: []
+    labring/telepresence: []
+    labring/uptime-kuma: []
   tls-verify: false

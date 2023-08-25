@@ -1,12 +1,11 @@
 docker.io:
   images:
+    labring/bitnami-redis-cluster: []
+    labring/clickhouse: []
+    labring/fluent-operator-containerd: []
     labring/helm: []
-    labring/coredns: []
-    labring/openebs: []
-    labring/ingress-nginx: []
-    labring/minio-operator: []
-    labring/redis-operator: []
-    labring/mysql-operator: []
-    labring/calico: []
-    labring/cert-manager: []
+    labring/openebs-jiva: []
+    labring/openim: []
+    labring/sonarqube: []
+    labring/zalando-postgres-operator: []
   tls-verify: false

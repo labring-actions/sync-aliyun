@@ -1,6 +1,10 @@
 docker.io:
   images:
-    labring/etcdctl: []
-    labring/neuvector: []
-    labring/telepresence: []
+    labring/gitlab-runner: []
+    labring/kafka-exporter: []
+    labring/kubernetes-reflector: []
+    labring/metallb: []
+    labring/mongodb-community-operator: []
+    labring/neuvector-containerd: []
+    labring/trivy-operator: []
   tls-verify: false
