@@ -1,11 +1,11 @@
 docker.io:
   images:
-    labring/gitlab-runner: []
-    labring/kubernetes-reflector: []
-    labring/kubevirt: []
-    labring/metallb: []
-    labring/mongodb-community-operator: []
+    labring/chaos-mesh: []
+    labring/endpoints-operator: []
+    labring/etcdctl: []
+    labring/kuboard: []
     labring/mysql-operator: []
-    labring/neuvector-containerd: []
-    labring/trivy-operator: []
+    labring/skopeo: []
+    labring/teleport: []
+    labring/weave-gitops: []
   tls-verify: false

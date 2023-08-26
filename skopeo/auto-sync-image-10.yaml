@@ -1,11 +1,10 @@
 docker.io:
   images:
-    labring/bitnami-mysql: []
-    labring/contour: []
-    labring/crunchy-postgres-operator: []
-    labring/docker-cni-plugins: []
-    labring/k9s: []
-    labring/loki: []
-    labring/loki-stack: []
-    labring/rook: []
+    labring/affine: []
+    labring/bitnami-mongodb-sharded: []
+    labring/ceph-csi-cephfs: []
+    labring/csi-driver-nfs: []
+    labring/istio: []
+    labring/k8tz: []
+    labring/neuvector-crio: []
   tls-verify: false

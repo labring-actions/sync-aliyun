@@ -1,11 +1,10 @@
 docker.io:
   images:
-    labring/flink-kubernetes-operator: []
-    labring/jenkins: []
-    labring/karmada: []
-    labring/kubelet: []
-    labring/metallb: []
-    labring/nextcloud: []
-    labring/openebs-mayastor: []
-    labring/zot-upload: []
+    labring/docker-casbin: []
+    labring/gloo: []
+    labring/grafana-operator: []
+    labring/kube-vip: []
+    labring/mongodb-single: []
+    labring/redis-exporter: []
+    labring/rocketmq-operator: []
   tls-verify: false

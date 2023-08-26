@@ -1,11 +1,11 @@
 docker.io:
   images:
-    labring/argocd: []
-    labring/bitnami-etcd: []
-    labring/bitnami-mongodb: []
-    labring/ceph-csi-rbd: []
-    labring/higress: []
-    labring/kustomize: []
+    labring/bond-cni: []
+    labring/helmfile: []
+    labring/loki: []
     labring/minio-operator: []
-    labring/tekton: []
+    labring/multus-cni: []
+    labring/openebs-nfs: []
+    labring/rabbitmq-cluster-operator: []
+    labring/rook: []
   tls-verify: false

@@ -1,12 +1,11 @@
 docker.io:
   images:
-    labring/apisix: []
-    labring/deepflow: []
-    labring/docker-casbin: []
-    labring/gitlab-operator: []
+    labring/argo-rollouts: []
+    labring/athenaserving: []
+    labring/awx-operator: []
+    labring/docker-kubeblocks-tools: []
     labring/ingress-nginx: []
-    labring/kube-state-metrics: []
-    labring/kubevela: []
-    labring/telepresence: []
-    labring/uptime-kuma: []
+    labring/mssql-server: []
+    labring/registry: []
+    labring/velero: []
   tls-verify: false

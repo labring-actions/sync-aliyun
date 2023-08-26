@@ -1,11 +1,10 @@
 docker.io:
   images:
-    labring/bitnami-zookeeper: []
-    labring/golang-vim-dev: []
-    labring/grafana: []
-    labring/harbor: []
-    labring/kubegems: []
-    labring/kubesphere: []
-    labring/local-path-provisioner: []
-    labring/nginx: []
+    labring/gitlab-runner: []
+    labring/gpu-operator: []
+    labring/kubernetes-reflector: []
+    labring/metallb: []
+    labring/mongodb-community-operator: []
+    labring/neuvector-containerd: []
+    labring/trivy-operator: []
   tls-verify: false

@@ -1,11 +1,11 @@
 docker.io:
   images:
-    labring/affine: []
-    labring/bitnami-mongodb-sharded: []
-    labring/ceph-csi-cephfs: []
-    labring/csi-driver-nfs: []
-    labring/istio: []
-    labring/neuvector-crio: []
+    labring/argo-workflows: []
+    labring/chaos-mesh-containerd: []
+    labring/docker-terminal: []
+    labring/fluxcd: []
+    labring/kubegems: []
+    labring/kubesphere: []
+    labring/podman: []
     labring/redis-operator: []
-    labring/zalando-postgres-operator: []
   tls-verify: false
