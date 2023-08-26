@@ -1,11 +1,10 @@
 docker.io:
   images:
-    labring/argo-rollouts: []
-    labring/athenaserving: []
-    labring/awx-operator: []
-    labring/docker-kubeblocks-tools: []
-    labring/longhorn: []
-    labring/mssql-server: []
-    labring/registry: []
-    labring/velero: []
+    labring/fluent-bit: []
+    labring/gitea: []
+    labring/kubeblocks: []
+    labring/openebs-lvm: []
+    labring/promtail: []
+    labring/skywalking: []
+    labring/tekton: []
   tls-verify: false

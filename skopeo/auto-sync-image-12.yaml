@@ -1,11 +1,10 @@
 docker.io:
   images:
-    labring/docker-casbin: []
-    labring/endpoints-operator: []
-    labring/gloo: []
-    labring/grafana-operator: []
-    labring/kube-vip: []
-    labring/kuboard: []
-    labring/mongodb-single: []
-    labring/rocketmq-operator: []
+    labring/docker-adminer: []
+    labring/gitlab: []
+    labring/kafka-exporter: []
+    labring/longhorn: []
+    labring/memcached: []
+    labring/neuvector-docker: []
+    labring/traefik: []
   tls-verify: false

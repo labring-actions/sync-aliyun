@@ -1,11 +1,10 @@
 docker.io:
   images:
-    labring/athenaserving: []
-    labring/bitnami-kafka: []
-    labring/cni-plugin: []
-    labring/code-server: []
-    labring/kube-ovn: []
-    labring/piraeus-operator: []
-    labring/tomcat: []
-    labring/velero: []
+    labring/argocd: []
+    labring/bitnami-etcd: []
+    labring/bitnami-mongodb: []
+    labring/ceph-csi-rbd: []
+    labring/elastic: []
+    labring/higress: []
+    labring/kustomize: []
   tls-verify: false

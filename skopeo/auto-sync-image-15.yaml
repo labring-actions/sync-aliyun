@@ -1,11 +1,10 @@
 docker.io:
   images:
-    labring/argocd: []
-    labring/discourse: []
-    labring/docker-zot: []
-    labring/eck-operator: []
-    labring/kubernetes-dashboard: []
-    labring/kubevirt: []
-    labring/nerdctl: []
-    labring/openebs-cstor: []
+    labring/bitnami-mysql: []
+    labring/contour: []
+    labring/crunchy-postgres-operator: []
+    labring/docker-cni-plugins: []
+    labring/k9s: []
+    labring/kube-prometheus-stack: []
+    labring/loki-stack: []
   tls-verify: false

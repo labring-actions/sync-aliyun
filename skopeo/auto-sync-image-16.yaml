@@ -1,11 +1,10 @@
 docker.io:
   images:
-    labring/istio: []
-    labring/jenkins-operator: []
-    labring/kong-ingress-controller: []
-    labring/lvscare: []
-    labring/oracle-mysql-operator: []
-    labring/ot-redis-cluster: []
-    labring/prometheus-adapter: []
-    labring/zot: []
+    labring/bitnami-zookeeper: []
+    labring/golang-vim-dev: []
+    labring/grafana: []
+    labring/harbor: []
+    labring/local-path-provisioner: []
+    labring/minio: []
+    labring/nginx: []
   tls-verify: false

@@ -1,12 +1,11 @@
 docker.io:
   images:
-    labring/chaos-mesh-crio: []
-    labring/cilium: []
-    labring/golang-vim-dev: []
-    labring/iomesh: []
-    labring/neuvector: []
+    labring/flink-kubernetes-operator: []
+    labring/jenkins: []
+    labring/karmada: []
+    labring/lvscare: []
+    labring/nextcloud: []
     labring/openebs: []
-    labring/rancher: []
-    labring/wordpress: []
-    labring/zadig: []
+    labring/openebs-mayastor: []
+    labring/zot-upload: []
   tls-verify: false

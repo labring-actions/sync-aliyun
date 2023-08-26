@@ -1,11 +1,10 @@
 docker.io:
   images:
-    labring/bitnami-redis-cluster: []
-    labring/clickhouse: []
-    labring/deepflow: []
-    labring/fluent-operator-containerd: []
-    labring/openebs-jiva: []
-    labring/openim: []
-    labring/sonarqube: []
-    labring/zalando-postgres-operator: []
+    labring/bitnami-kafka: []
+    labring/cni-plugin: []
+    labring/code-server: []
+    labring/kube-ovn: []
+    labring/metrics-server: []
+    labring/piraeus-operator: []
+    labring/tomcat: []
   tls-verify: false

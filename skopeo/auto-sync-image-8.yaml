@@ -1,11 +1,11 @@
 docker.io:
   images:
-    labring/bitnami-minio: []
+    labring/apisix: []
     labring/cert-manager: []
-    labring/docker-kuboard: []
-    labring/jenkins: []
-    labring/kyverno: []
-    labring/nfs-subdir-external-provisioner: []
-    labring/sriov-network-operator: []
-    labring/tidb-operator: []
+    labring/deepflow: []
+    labring/gitlab-operator: []
+    labring/kube-state-metrics: []
+    labring/kubevela: []
+    labring/telepresence: []
+    labring/uptime-kuma: []
   tls-verify: false
