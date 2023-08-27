@@ -72,8 +72,18 @@ func fetchDockerHubAllRepo() (map[string]SkopeoList, error) {
 				return err
 			}
 			for _, repo := range repositories.Results {
-				if stringInSlice(repo.Name, specialRepos) {
-					for _, version := range kubeVersions {
+				if stringInSlice(repo.Name, KubeKinds) {
+					for _, version := range KubeVersions {
+						versions[fmt.Sprintf("%s-%s", repo.Name, version)] = SkopeoList{
+							defaultRegistryName: {
+								Images:           nil,
+								ImagesByTagRegex: map[string]string{repo.getName(): fmt.Sprintf("^v(1\\.%s\\.[1-9]?[0-9]?)(\\.)?$", version)},
+								TLSVerify:        false,
+							},
+						}
+					}
+				} else if stringInSlice(repo.Name, K3sKinds) {
+					for _, version := range KubeVersions {
 						versions[fmt.Sprintf("%s-%s", repo.Name, version)] = SkopeoList{
 							defaultRegistryName: {
 								Images:           nil,
@@ -111,7 +121,6 @@ func fetchDockerHubAllRepo() (map[string]SkopeoList, error) {
 		logger.Error("get dockerhub repo error: %s", err.Error())
 		return nil, err
 	}
-	groupSize := 5
 	groups := make(map[int][]string)
 	for i, repo := range defaultRepos {
 		groupIndex := i / groupSize
