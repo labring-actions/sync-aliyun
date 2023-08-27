@@ -118,8 +118,10 @@ func fetchDockerHubAllRepo() (map[string]SkopeoList, error) {
 								TLSVerify: false,
 							},
 						}
+					} else {
+						defaultRepos = append(defaultRepos, repo.getName())
 					}
-					defaultRepos = append(defaultRepos, repo.getName())
+
 				}
 			}
 			fetchURL = repositories.Next
