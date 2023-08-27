@@ -1,8 +1,8 @@
 docker.io:
   images:
     labring/jenkins: []
-    labring/kubevirt: []
+    labring/kuboard: []
     labring/loki: []
-    labring/oracle-mysql-operator: []
     labring/velero: []
+    labring/wordpress: []
   tls-verify: false

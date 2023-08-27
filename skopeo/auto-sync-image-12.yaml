@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/eck-operator: []
-    labring/flink-kubernetes-operator: []
-    labring/kong-ingress-controller: []
+    labring/fluxcd: []
+    labring/kubevela: []
     labring/mssql-server: []
     labring/rabbitmq-cluster-operator: []
+    labring/weave-gitops: []
   tls-verify: false
