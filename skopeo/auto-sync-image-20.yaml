@@ -1,8 +1,8 @@
 docker.io:
   images:
+    labring/docker-terminal: []
+    labring/etcdctl: []
     labring/helmfile: []
-    labring/karmada: []
-    labring/nerdctl: []
-    labring/ot-redis-cluster: []
-    labring/registry: []
+    labring/neuvector: []
+    labring/telepresence: []
   tls-verify: false

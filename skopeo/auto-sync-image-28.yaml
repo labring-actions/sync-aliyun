@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/argo-rollouts: []
-    labring/discourse: []
-    labring/jenkins-operator: []
-    labring/nextcloud: []
+    labring/argo-workflows: []
+    labring/iomesh: []
     labring/openebs-nfs: []
+    labring/teleport: []
+    labring/uptime-kuma: []
   tls-verify: false

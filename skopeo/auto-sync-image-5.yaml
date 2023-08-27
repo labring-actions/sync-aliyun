@@ -2,7 +2,7 @@ docker.io:
   images:
     labring/argocd: []
     labring/cilium: []
-    labring/deepflow: []
     labring/endpoints-operator: []
-    labring/kubesphere: []
+    labring/istio: []
+    labring/metallb: []
   tls-verify: false

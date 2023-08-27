@@ -2,7 +2,7 @@ docker.io:
   images:
     labring/apisix: []
     labring/bitnami-mongodb: []
-    labring/kubegems: []
-    labring/kuboard: []
-    labring/wordpress: []
+    labring/bitnami-mongodb-sharded: []
+    labring/mongodb-community-operator: []
+    labring/traefik: []
   tls-verify: false

@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/gitlab-operator: []
+    labring/csi-driver-nfs: []
+    labring/gitlab: []
+    labring/gitlab-runner: []
     labring/higress: []
-    labring/podman: []
-    labring/skopeo: []
-    labring/zadig: []
+    labring/kyverno: []
   tls-verify: false

@@ -1,0 +1,4 @@
+docker.io:
+  images:
+    labring/rancher: []
+  tls-verify: false

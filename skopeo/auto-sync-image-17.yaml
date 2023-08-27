@@ -1,8 +1,8 @@
 docker.io:
   images:
     labring/bitnami-etcd: []
-    labring/chaos-mesh: []
-    labring/chaos-mesh-containerd: []
-    labring/chaos-mesh-crio: []
-    labring/kube-state-metrics: []
+    labring/neuvector-containerd: []
+    labring/neuvector-crio: []
+    labring/neuvector-docker: []
+    labring/sriov-network-operator: []
   tls-verify: false
