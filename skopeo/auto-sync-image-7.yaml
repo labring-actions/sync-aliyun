@@ -1,11 +1,8 @@
 docker.io:
   images:
-    labring/calico: []
-    labring/chaos-mesh-crio: []
-    labring/cilium: []
-    labring/iomesh: []
-    labring/neuvector: []
-    labring/rancher: []
-    labring/wordpress: []
-    labring/zadig: []
+    labring/docker-casbin: []
+    labring/docker-cni-plugins: []
+    labring/golang-vim-dev: []
+    labring/tekton: []
+    labring/zalando-postgres-operator: []
   tls-verify: false

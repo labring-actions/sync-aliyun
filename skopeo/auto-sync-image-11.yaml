@@ -1,10 +1,8 @@
 docker.io:
   images:
-    labring/gitlab-runner: []
-    labring/gpu-operator: []
-    labring/kubernetes-reflector: []
-    labring/metallb: []
-    labring/mongodb-community-operator: []
-    labring/neuvector-containerd: []
-    labring/trivy-operator: []
+    labring/crunchy-postgres-operator: []
+    labring/fluent-bit: []
+    labring/fluent-operator-containerd: []
+    labring/nginx: []
+    labring/rocketmq-operator: []
   tls-verify: false

@@ -1,10 +1,8 @@
 docker.io:
   images:
-    labring/fluent-bit: []
-    labring/gitea: []
-    labring/kubeblocks: []
-    labring/openebs-lvm: []
-    labring/promtail: []
-    labring/skywalking: []
-    labring/tekton: []
+    labring/cni-plugin: []
+    labring/neuvector-containerd: []
+    labring/neuvector-crio: []
+    labring/neuvector-docker: []
+    labring/sriov-network-operator: []
   tls-verify: false

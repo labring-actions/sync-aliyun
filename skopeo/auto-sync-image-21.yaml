@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/ceph-csi-rbd: []
+    labring/docker-terminal: []
+    labring/etcdctl: []
+    labring/neuvector: []
+    labring/telepresence: []
+  tls-verify: false

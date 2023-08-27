@@ -1,10 +1,8 @@
 docker.io:
   images:
-    labring/affine: []
     labring/bitnami-mongodb-sharded: []
-    labring/ceph-csi-cephfs: []
-    labring/csi-driver-nfs: []
-    labring/istio: []
-    labring/k8tz: []
-    labring/neuvector-crio: []
+    labring/docker-kuboard: []
+    labring/mongodb-community-operator: []
+    labring/tomcat: []
+    labring/traefik: []
   tls-verify: false

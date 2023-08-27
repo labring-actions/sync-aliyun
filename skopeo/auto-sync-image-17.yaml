@@ -1,10 +1,8 @@
 docker.io:
   images:
-    labring/docker-casbin: []
-    labring/gloo: []
-    labring/grafana-operator: []
-    labring/kube-vip: []
-    labring/mongodb-single: []
-    labring/redis-exporter: []
-    labring/rocketmq-operator: []
+    labring/bitnami-etcd: []
+    labring/chaos-mesh: []
+    labring/chaos-mesh-containerd: []
+    labring/chaos-mesh-crio: []
+    labring/kube-state-metrics: []
   tls-verify: false

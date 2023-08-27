@@ -1,11 +1,8 @@
 docker.io:
   images:
-    labring/coredns: []
-    labring/jenkins-operator: []
-    labring/kong-ingress-controller: []
-    labring/kubernetes-dashboard: []
-    labring/oracle-mysql-operator: []
-    labring/ot-redis-cluster: []
-    labring/prometheus-adapter: []
-    labring/zot: []
+    labring/calico: []
+    labring/cert-manager: []
+    labring/elastic: []
+    labring/mysql-operator: []
+    labring/redis-operator: []
   tls-verify: false

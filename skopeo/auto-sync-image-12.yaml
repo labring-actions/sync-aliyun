@@ -1,10 +1,8 @@
 docker.io:
   images:
-    labring/docker-adminer: []
-    labring/gitlab: []
-    labring/kafka-exporter: []
-    labring/longhorn: []
-    labring/memcached: []
-    labring/neuvector-docker: []
-    labring/traefik: []
+    labring/eck-operator: []
+    labring/flink-kubernetes-operator: []
+    labring/kong-ingress-controller: []
+    labring/mssql-server: []
+    labring/rabbitmq-cluster-operator: []
   tls-verify: false

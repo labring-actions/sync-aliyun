@@ -1,11 +1,8 @@
 docker.io:
   images:
-    labring/argo-rollouts: []
-    labring/athenaserving: []
-    labring/awx-operator: []
-    labring/docker-kubeblocks-tools: []
-    labring/ingress-nginx: []
-    labring/mssql-server: []
-    labring/registry: []
-    labring/velero: []
+    labring/flannel: []
+    labring/kube-prometheus-stack: []
+    labring/minio: []
+    labring/redis-exporter: []
+    labring/skywalking: []
   tls-verify: false

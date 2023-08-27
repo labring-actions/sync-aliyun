@@ -1,11 +1,8 @@
 docker.io:
   images:
-    labring/clickhouse: []
-    labring/discourse: []
-    labring/docker-zot: []
-    labring/eck-operator: []
+    labring/coredns: []
     labring/helm: []
-    labring/kubevirt: []
-    labring/nerdctl: []
-    labring/openebs-cstor: []
+    labring/ingress-nginx: []
+    labring/minio-operator: []
+    labring/openebs: []
   tls-verify: false
