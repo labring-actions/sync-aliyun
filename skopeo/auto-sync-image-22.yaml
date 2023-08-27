@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/bitnami-kafka: []
+    labring/bitnami-minio: []
+    labring/ceph-csi-cephfs: []
+    labring/docker-adminer: []
+    labring/kubernetes-reflector: []
+  tls-verify: false

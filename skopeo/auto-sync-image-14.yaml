@@ -1,10 +1,8 @@
 docker.io:
   images:
-    labring/bitnami-kafka: []
-    labring/cni-plugin: []
+    labring/affine: []
     labring/code-server: []
-    labring/kube-ovn: []
-    labring/metrics-server: []
-    labring/piraeus-operator: []
-    labring/tomcat: []
+    labring/memcached: []
+    labring/nfs-subdir-external-provisioner: []
+    labring/trivy-operator: []
   tls-verify: false

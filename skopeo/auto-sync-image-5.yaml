@@ -1,11 +1,8 @@
 docker.io:
   images:
-    labring/argo-workflows: []
-    labring/chaos-mesh-containerd: []
-    labring/docker-terminal: []
-    labring/fluxcd: []
-    labring/kubegems: []
+    labring/argocd: []
+    labring/cilium: []
+    labring/deepflow: []
+    labring/endpoints-operator: []
     labring/kubesphere: []
-    labring/podman: []
-    labring/redis-operator: []
   tls-verify: false

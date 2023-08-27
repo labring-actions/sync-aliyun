@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/gitlab-operator: []
+    labring/higress: []
+    labring/podman: []
+    labring/skopeo: []
+    labring/zadig: []
+  tls-verify: false

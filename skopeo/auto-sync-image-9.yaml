@@ -1,10 +1,8 @@
 docker.io:
   images:
-    labring/argocd: []
-    labring/bitnami-etcd: []
+    labring/apisix: []
     labring/bitnami-mongodb: []
-    labring/ceph-csi-rbd: []
-    labring/elastic: []
-    labring/higress: []
-    labring/kustomize: []
+    labring/kubegems: []
+    labring/kuboard: []
+    labring/wordpress: []
   tls-verify: false

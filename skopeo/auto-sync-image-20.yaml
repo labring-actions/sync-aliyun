@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/helmfile: []
+    labring/karmada: []
+    labring/nerdctl: []
+    labring/ot-redis-cluster: []
+    labring/registry: []
+  tls-verify: false

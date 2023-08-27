@@ -1,11 +1,8 @@
 docker.io:
   images:
-    labring/chaos-mesh: []
-    labring/endpoints-operator: []
-    labring/etcdctl: []
-    labring/kuboard: []
-    labring/mysql-operator: []
-    labring/skopeo: []
-    labring/teleport: []
-    labring/weave-gitops: []
+    labring/istio: []
+    labring/kube-ovn: []
+    labring/longhorn: []
+    labring/metallb: []
+    labring/tidb-operator: []
   tls-verify: false
