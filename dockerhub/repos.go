@@ -35,7 +35,9 @@ type registrySyncConfig struct {
 
 type SkopeoList map[registryName]registrySyncConfig
 
-var specialRepos = []string{"kubernetes", "kubernetes-crio", "kubernetes-docker"}
+var specialRepos = []string{"kubernetes", "kubernetes-crio", "kubernetes-docker", "k3s", "k3s-docker", "k3s-crio"}
+
+var kubeVersions = []string{"18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29"}
 
 const defaultRepo = "labring"
 
@@ -71,12 +73,14 @@ func fetchDockerHubAllRepo() (map[string]SkopeoList, error) {
 			}
 			for _, repo := range repositories.Results {
 				if stringInSlice(repo.Name, specialRepos) {
-					versions[repo.Name] = SkopeoList{
-						defaultRegistryName: {
-							Images:           nil,
-							ImagesByTagRegex: map[string]string{repo.getName(): "^v(1\\.2[0-9]\\.[1-9]?[0-9]?)(\\.)?$"},
-							TLSVerify:        false,
-						},
+					for _, version := range kubeVersions {
+						versions[fmt.Sprintf("%s-%s", repo.Name, version)] = SkopeoList{
+							defaultRegistryName: {
+								Images:           nil,
+								ImagesByTagRegex: map[string]string{repo.getName(): fmt.Sprintf("^v(1\\.%s\\.[1-9]?[0-9]?)(\\.)?$", version)},
+								TLSVerify:        false,
+							},
+						}
 					}
 				} else if strings.HasPrefix(repo.Name, "sealos") {
 					if strings.HasPrefix(repo.Name, "sealos-cloud") || repo.Name == "sealos" || repo.Name == "sealos-patch" {
@@ -107,22 +111,27 @@ func fetchDockerHubAllRepo() (map[string]SkopeoList, error) {
 		logger.Error("get dockerhub repo error: %s", err.Error())
 		return nil, err
 	}
-	count := 20
-	defaultImages := make([]map[string][]string, count)
+	groupSize := 5
+	groups := make(map[int][]string)
 	for i, repo := range defaultRepos {
-		index := i % count
-		if defaultImages[index] == nil {
-			defaultImages[index] = make(map[string][]string)
-		}
-		defaultImages[index][repo] = []string{}
+		groupIndex := i / groupSize
+		groups[groupIndex] = append(groups[groupIndex], repo)
 	}
-	for i, images := range defaultImages {
+	for i, images := range groups {
 		versions[fmt.Sprintf("image-%d", i)] = SkopeoList{
 			defaultRegistryName: {
-				Images:    images,
+				Images:    convertMap(images),
 				TLSVerify: false,
 			},
 		}
 	}
 	return versions, nil
+}
+
+func convertMap(from []string) map[string][]string {
+	data := make(map[string][]string)
+	for _, v := range from {
+		data[v] = []string{}
+	}
+	return data
 }

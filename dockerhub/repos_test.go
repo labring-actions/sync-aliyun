@@ -17,6 +17,7 @@ limitations under the License.
 package dockerhub
 
 import (
+	"fmt"
 	"github.com/cuisongliu/logger"
 	"testing"
 )
@@ -51,4 +52,32 @@ func TestFetchDockerHubAllVersion(t *testing.T) {
 			continue
 		}
 	}
+}
+
+func TestGroups(t *testing.T) {
+	defaultRepos := []string{
+		"repo1",
+		"repo2",
+		"repo3",
+		"repo4",
+		"repo5",
+		"repo6",
+		"repo7",
+		"repo8",
+		"repo9",
+		"repo10",
+	}
+	groupSize := 5
+	groups := make(map[int][]string)
+	for i, repo := range defaultRepos {
+		groupIndex := i / groupSize
+		groups[groupIndex] = append(groups[groupIndex], repo)
+	}
+	for groupIndex, images := range groups {
+		fmt.Printf("Group %d:\n", groupIndex+1)
+		fmt.Printf("Group data %+v:\n", images)
+	}
+
+	data := fmt.Sprintf("^v(1\\.%s\\.[1-9]?[0-9]?)(\\.)?$", "20")
+	fmt.Println(data)
 }
