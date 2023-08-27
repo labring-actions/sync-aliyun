@@ -111,6 +111,14 @@ func fetchDockerHubAllRepo() (map[string]SkopeoList, error) {
 						},
 					}
 				} else {
+					if stringInSlice(repo.Name, bigSync) {
+						versions[repo.Name] = SkopeoList{
+							defaultRegistryName: {
+								Images:    map[string][]string{repo.getName(): {}},
+								TLSVerify: false,
+							},
+						}
+					}
 					defaultRepos = append(defaultRepos, repo.getName())
 				}
 			}

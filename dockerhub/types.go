@@ -23,3 +23,5 @@ var KubeKinds = []string{"kubernetes", "kubernetes-crio", "kubernetes-docker"}
 var K3sKinds = []string{"k3s", "k3s-crio", "k3s-docker"}
 
 const groupSize = 5
+
+var bigSync = []string{"kubegems", "kubesphere"}
