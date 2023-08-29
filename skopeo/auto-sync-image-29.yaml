@@ -1,0 +1,4 @@
+docker.io:
+  images:
+    labring/kubectl-df-pv: []
+  tls-verify: false
