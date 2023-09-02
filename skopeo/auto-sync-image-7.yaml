@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/docker-casbin: []
+    labring/jenkins: []
     labring/kubevirt: []
     labring/oracle-mysql-operator: []
-    labring/tekton: []
+    labring/velero: []
     labring/zalando-postgres-operator: []
   tls-verify: false

@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/chaos-mesh: []
-    labring/chaos-mesh-containerd: []
+    labring/bitnami-etcd: []
     labring/chaos-mesh-crio: []
     labring/kube-state-metrics: []
-    labring/multus-cni: []
+    labring/neuvector-containerd: []
+    labring/neuvector-crio: []
   tls-verify: false

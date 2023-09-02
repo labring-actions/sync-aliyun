@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/bond-cni: []
-    labring/gitlab-operator: []
-    labring/podman: []
-    labring/skopeo: []
-    labring/zadig: []
+    labring/gitlab: []
+    labring/gitlab-runner: []
+    labring/kyverno: []
+    labring/loki-stack: []
+    labring/piraeus-operator: []
   tls-verify: false

@@ -1,8 +1,8 @@
 docker.io:
   images:
     labring/awx-operator: []
-    labring/openebs-cstor: []
-    labring/openebs-jiva: []
+    labring/chaos-mesh: []
+    labring/chaos-mesh-containerd: []
+    labring/multus-cni: []
     labring/openebs-mayastor: []
-    labring/prometheus-adapter: []
   tls-verify: false

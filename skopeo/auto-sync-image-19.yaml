@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/bitnami-redis-cluster: []
+    labring/etcdctl: []
+    labring/helmfile: []
     labring/karmada: []
-    labring/nerdctl: []
-    labring/ot-redis-cluster: []
+    labring/neuvector: []
     labring/registry: []
   tls-verify: false

@@ -1,5 +1,0 @@
-docker.io:
-  images:
-    labring/enovy-gateway: []
-    labring/kubectl-df-pv: []
-  tls-verify: false

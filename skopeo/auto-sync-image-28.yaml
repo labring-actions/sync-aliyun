@@ -1,8 +1,0 @@
-docker.io:
-  images:
-    labring/argo-workflows: []
-    labring/iomesh: []
-    labring/openebs-nfs: []
-    labring/teleport: []
-    labring/uptime-kuma: []
-  tls-verify: false

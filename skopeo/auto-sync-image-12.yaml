@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/fluxcd: []
+    labring/affine: []
     labring/kubevela: []
-    labring/mssql-server: []
-    labring/rabbitmq-cluster-operator: []
+    labring/kustomize: []
+    labring/trivy-operator: []
     labring/weave-gitops: []
   tls-verify: false

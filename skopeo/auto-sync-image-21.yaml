@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/bitnami-minio: []
-    labring/ceph-csi-cephfs: []
-    labring/ceph-csi-rbd: []
-    labring/docker-adminer: []
-    labring/kubernetes-reflector: []
+    labring/bitnami-kafka: []
+    labring/bitnami-mysql: []
+    labring/bitnami-zookeeper: []
+    labring/kubeblocks: []
+    labring/mongodb-single: []
   tls-verify: false

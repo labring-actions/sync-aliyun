@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/docker-terminal: []
-    labring/etcdctl: []
-    labring/helmfile: []
-    labring/neuvector: []
+    labring/bitnami-minio: []
+    labring/ceph-csi-cephfs: []
+    labring/ceph-csi-rbd: []
+    labring/kubernetes-reflector: []
     labring/telepresence: []
   tls-verify: false
