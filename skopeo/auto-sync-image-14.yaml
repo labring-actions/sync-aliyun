@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/code-server: []
-    labring/contour: []
     labring/gitea: []
     labring/gloo: []
-    labring/harbor: []
+    labring/openebs-cstor: []
+    labring/openebs-jiva: []
+    labring/prometheus-adapter: []
   tls-verify: false

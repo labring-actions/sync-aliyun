@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/grafana: []
-    labring/grafana-operator: []
-    labring/loki-stack: []
-    labring/piraeus-operator: []
-    labring/promtail: []
+    labring/argo-rollouts: []
+    labring/argo-workflows: []
+    labring/jenkins-operator: []
+    labring/nextcloud: []
+    labring/openebs-nfs: []
   tls-verify: false

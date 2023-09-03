@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/csi-driver-nfs: []
-    labring/gitlab: []
-    labring/gitlab-runner: []
-    labring/higress: []
-    labring/kyverno: []
+    labring/discourse: []
+    labring/grafana: []
+    labring/grafana-operator: []
+    labring/promtail: []
+    labring/sonarqube: []
   tls-verify: false

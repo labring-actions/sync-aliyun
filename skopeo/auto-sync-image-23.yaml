@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/docker-kubeblocks-tools: []
-    labring/docker-zot: []
-    labring/openim: []
-    labring/zot: []
-    labring/zot-upload: []
+    labring/csi-driver-nfs: []
+    labring/gitlab-operator: []
+    labring/higress: []
+    labring/skopeo: []
+    labring/zadig: []
   tls-verify: false

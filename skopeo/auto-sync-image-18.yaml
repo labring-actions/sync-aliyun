@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/cni-plugin: []
-    labring/k9s: []
+    labring/bitnami-redis-cluster: []
     labring/kube-vip: []
-    labring/local-path-provisioner: []
+    labring/nerdctl: []
     labring/openebs-lvm: []
+    labring/ot-redis-cluster: []
   tls-verify: false

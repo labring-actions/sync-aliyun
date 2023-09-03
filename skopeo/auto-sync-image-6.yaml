@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/docker-cni-plugins: []
     labring/golang-vim-dev: []
     labring/kube-ovn: []
     labring/longhorn: []
+    labring/tekton: []
     labring/tidb-operator: []
   tls-verify: false

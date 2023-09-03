@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/affine: []
-    labring/kustomize: []
+    labring/code-server: []
+    labring/contour: []
+    labring/harbor: []
     labring/memcached: []
     labring/nfs-subdir-external-provisioner: []
-    labring/trivy-operator: []
   tls-verify: false

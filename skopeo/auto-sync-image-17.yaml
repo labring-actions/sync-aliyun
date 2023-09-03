@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/bitnami-etcd: []
-    labring/neuvector-containerd: []
-    labring/neuvector-crio: []
+    labring/cni-plugin: []
+    labring/k9s: []
+    labring/local-path-provisioner: []
     labring/neuvector-docker: []
     labring/sriov-network-operator: []
   tls-verify: false

@@ -1,8 +1,8 @@
 docker.io:
   images:
-    labring/jenkins: []
+    labring/apisix: []
+    labring/bitnami-mongodb: []
     labring/kuboard: []
     labring/loki: []
-    labring/velero: []
     labring/wordpress: []
   tls-verify: false
