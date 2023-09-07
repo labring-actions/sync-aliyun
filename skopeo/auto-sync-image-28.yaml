@@ -1,0 +1,5 @@
+docker.io:
+  images:
+    labring/calicoctl: []
+    labring/cni-plugins: []
+  tls-verify: false
