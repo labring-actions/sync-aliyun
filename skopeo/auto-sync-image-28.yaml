@@ -2,4 +2,6 @@ docker.io:
   images:
     labring/calicoctl: []
     labring/cni-plugins: []
+    labring/helm-dashboard: []
+    labring/kube-router: []
   tls-verify: false
