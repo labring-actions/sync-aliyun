@@ -4,4 +4,5 @@ docker.io:
     labring/cni-plugins: []
     labring/helm-dashboard: []
     labring/kube-router: []
+    labring/kubeblocks-csi-s3: []
   tls-verify: false
