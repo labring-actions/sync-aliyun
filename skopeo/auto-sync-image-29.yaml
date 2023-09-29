@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/bitnami-mariadb-galera: []
+    labring/bitnami-postgresql: []
+    labring/bitnami-postgresql-ha: []
+    labring/cowboysysop-vertical-pod-autoscaler: []
+    labring/vertical-pod-autoscaler: []
+  tls-verify: false

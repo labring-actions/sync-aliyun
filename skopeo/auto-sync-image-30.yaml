@@ -1,0 +1,6 @@
+docker.io:
+  images:
+    labring/bitnami-apache: []
+    labring/bitnami-mariadb: []
+    labring/mariadb-operator: []
+  tls-verify: false
