@@ -1,6 +1,8 @@
 docker.io:
   images:
     labring/bitnami-apache: []
+    labring/bitnami-clickhouse: []
+    labring/bitnami-elasticsearch: []
     labring/bitnami-mariadb: []
     labring/mariadb-operator: []
   tls-verify: false
