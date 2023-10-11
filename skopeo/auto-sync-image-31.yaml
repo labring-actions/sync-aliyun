@@ -1,0 +1,4 @@
+docker.io:
+  images:
+    labring/zookeeper-operator: []
+  tls-verify: false
