@@ -1,0 +1,6 @@
+docker.io:
+  images:
+    labring/elasticsearch: []
+    labring/fluent-operator: []
+    labring/koperator: []
+  tls-verify: false
