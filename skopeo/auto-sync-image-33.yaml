@@ -1,6 +1,8 @@
 docker.io:
   images:
+    labring/bitnami-fluent-bit: []
     labring/elasticsearch: []
     labring/fluent-operator: []
     labring/koperator: []
+    labring/logging-operator: []
   tls-verify: false
