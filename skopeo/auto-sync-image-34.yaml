@@ -1,0 +1,6 @@
+docker.io:
+  images:
+    labring/descheduler: []
+    labring/gatekeeper: []
+    labring/openkruise: []
+  tls-verify: false
