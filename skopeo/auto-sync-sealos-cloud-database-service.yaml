@@ -1,0 +1,7 @@
+docker.io:
+  images:
+    labring/sealos-cloud-database-service:
+    - latest
+  images-by-tag-regex:
+    labring/sealos-cloud-database-service: ^v.*
+  tls-verify: false
