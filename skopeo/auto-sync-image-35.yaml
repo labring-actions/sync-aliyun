@@ -1,5 +1,6 @@
 docker.io:
   images:
+    labring/gitness: []
     labring/keda: []
     labring/opentelemetry-collector: []
     labring/opentelemetry-demo: []
