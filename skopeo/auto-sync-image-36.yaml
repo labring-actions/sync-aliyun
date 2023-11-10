@@ -1,0 +1,5 @@
+docker.io:
+  images:
+    labring/dapr: []
+    labring/dapr-dashboard: []
+  tls-verify: false
