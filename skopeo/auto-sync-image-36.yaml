@@ -2,4 +2,5 @@ docker.io:
   images:
     labring/dapr: []
     labring/dapr-dashboard: []
+    labring/runwasi-wasmedge: []
   tls-verify: false
