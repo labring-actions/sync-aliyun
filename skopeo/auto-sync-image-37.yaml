@@ -1,4 +1,5 @@
 docker.io:
   images:
+    labring/chatbot-ui: []
     labring/containerd-shim-wasmer: []
   tls-verify: false
