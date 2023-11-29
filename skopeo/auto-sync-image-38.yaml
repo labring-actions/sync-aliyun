@@ -1,4 +1,5 @@
 docker.io:
   images:
+    labring/pulsar: []
     labring/seaweedfs: []
   tls-verify: false
