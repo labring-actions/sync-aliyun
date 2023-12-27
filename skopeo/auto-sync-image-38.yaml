@@ -1,6 +1,7 @@
 docker.io:
   images:
     labring/argo-events: []
+    labring/istio-bookinfo: []
     labring/kargo: []
     labring/pulsar: []
     labring/seaweedfs: []
