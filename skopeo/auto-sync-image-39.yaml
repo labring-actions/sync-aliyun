@@ -1,0 +1,4 @@
+docker.io:
+  images:
+    labring/victoria-metrics-k8s-stack: []
+  tls-verify: false
