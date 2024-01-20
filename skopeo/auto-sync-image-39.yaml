@@ -1,4 +1,6 @@
 docker.io:
   images:
+    labring/milvus: []
+    labring/milvus-operator: []
     labring/victoria-metrics-k8s-stack: []
   tls-verify: false
