@@ -1,5 +1,6 @@
 docker.io:
   images:
+    labring/kuberay: []
     labring/milvus: []
     labring/milvus-operator: []
     labring/victoria-metrics-k8s-stack: []
