@@ -2,6 +2,7 @@ docker.io:
   images:
     labring/kuberay: []
     labring/milvus: []
+    labring/milvus-attu: []
     labring/milvus-operator: []
     labring/victoria-metrics-k8s-stack: []
   tls-verify: false

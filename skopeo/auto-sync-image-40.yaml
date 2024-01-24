@@ -1,0 +1,6 @@
+docker.io:
+  images:
+    labring/rainbond: []
+    labring/victoria-metrics-operator: []
+    labring/victoria-metrics-single: []
+  tls-verify: false
