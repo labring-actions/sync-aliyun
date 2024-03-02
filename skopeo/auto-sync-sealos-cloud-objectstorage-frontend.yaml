@@ -1,0 +1,7 @@
+docker.io:
+  images:
+    labring/sealos-cloud-objectstorage-frontend:
+    - latest
+  images-by-tag-regex:
+    labring/sealos-cloud-objectstorage-frontend: ^v.*
+  tls-verify: false
