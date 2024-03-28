@@ -1,0 +1,7 @@
+docker.io:
+  images:
+    labring/kubeblocks-apecloud-mysql: []
+    labring/kubeblocks-kafka: []
+    labring/kubeblocks-mongodb: []
+    labring/kubeblocks-postgresql: []
+  tls-verify: false
