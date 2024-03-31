@@ -1,6 +1,7 @@
 docker.io:
   images:
     labring/cockroach: []
+    labring/kubeblocks-redis: []
     labring/rainbond: []
     labring/victoria-metrics-operator: []
     labring/victoria-metrics-single: []
