@@ -1,4 +1,8 @@
 docker.io:
   images:
+    labring/cubefs: []
+    labring/minecraft-server: []
+    labring/oceanbase-operator: []
+    labring/seaweedfs-csi-driver: []
     labring/signoz: []
   tls-verify: false
