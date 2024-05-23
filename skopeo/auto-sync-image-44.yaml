@@ -1,0 +1,4 @@
+docker.io:
+  images:
+    labring/oceanbase-cluster: []
+  tls-verify: false
