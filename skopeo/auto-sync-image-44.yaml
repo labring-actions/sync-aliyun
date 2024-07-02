@@ -2,4 +2,6 @@ docker.io:
   images:
     labring/istio-base: []
     labring/oceanbase-cluster: []
+    labring/zabbix-agent: []
+    labring/zabbix-server: []
   tls-verify: false
