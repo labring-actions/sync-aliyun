@@ -1,5 +1,6 @@
 docker.io:
   images:
+    labring/automq-operator: []
     labring/istio-base: []
     labring/oceanbase-cluster: []
     labring/zabbix-agent: []
