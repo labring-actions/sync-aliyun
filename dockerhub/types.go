@@ -16,7 +16,7 @@ limitations under the License.
 
 package dockerhub
 
-var KubeVersions = []string{"18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29"}
+var KubeVersions = []string{"18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}
 
 var KubeKinds = []string{"kubernetes", "kubernetes-crio", "kubernetes-docker"}
 
@@ -25,3 +25,5 @@ var K3sKinds = []string{"k3s", "k3s-crio", "k3s-docker"}
 const groupSize = 5
 
 var bigSync = []string{"kubegems", "kubesphere", "deepflow", "rancher"}
+
+const defaultRepo = "labring"

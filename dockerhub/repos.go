@@ -35,12 +35,6 @@ type registrySyncConfig struct {
 
 type SkopeoList map[registryName]registrySyncConfig
 
-var specialRepos = []string{"kubernetes", "kubernetes-crio", "kubernetes-docker", "k3s", "k3s-docker", "k3s-crio"}
-
-var kubeVersions = []string{"18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29"}
-
-const defaultRepo = "labring"
-
 type Repo struct {
 	Name string `json:"name"`
 }
@@ -56,7 +50,7 @@ func (r *Repo) getName() string {
 
 func fetchDockerHubAllRepo() (map[string]SkopeoList, error) {
 
-	fetchURL := "https://hub.docker.com/v2/repositories/labring?page_size=10"
+	fetchURL := fmt.Sprintf("https://hub.docker.com/v2/repositories/%s?page_size=10", defaultRepo)
 
 	versions := make(map[string]SkopeoList)
 	defaultRepos := make([]string, 0)

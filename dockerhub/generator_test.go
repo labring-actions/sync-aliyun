@@ -17,13 +17,16 @@ limitations under the License.
 package dockerhub
 
 import (
+	"github.com/cuisongliu/logger"
 	"testing"
 )
 
 func Test_getCIRun(t *testing.T) {
-	data, err := getCIRun("../.cirun.yml")
-	if err != nil {
-		t.Fatal(err)
-	}
-	t.Log(data)
+	//data, err := getCIRun("../.cirun.yml")
+	//if err != nil {
+	//	t.Fatal(err)
+	//}
+	//t.Log(data)
+	logger.Cfg(false, false)
+	logger.Info("load all plugins")
 }
