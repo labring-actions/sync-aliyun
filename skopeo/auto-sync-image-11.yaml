@@ -1,8 +1,0 @@
-docker.io:
-  images:
-    labring/flink-kubernetes-operator: []
-    labring/fluxcd: []
-    labring/kong-ingress-controller: []
-    labring/mssql-server: []
-    labring/rabbitmq-cluster-operator: []
-  tls-verify: false

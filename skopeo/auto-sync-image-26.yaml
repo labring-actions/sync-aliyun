@@ -1,8 +1,0 @@
-docker.io:
-  images:
-    labring/argo-rollouts: []
-    labring/argo-workflows: []
-    labring/jenkins-operator: []
-    labring/nextcloud: []
-    labring/openebs-nfs: []
-  tls-verify: false

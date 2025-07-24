@@ -1,7 +1,0 @@
-docker.io:
-  images:
-    labring/sealos-cloud-dbprovider-frontend:
-    - latest
-  images-by-tag-regex:
-    labring/sealos-cloud-dbprovider-frontend: ^v.*
-  tls-verify: false

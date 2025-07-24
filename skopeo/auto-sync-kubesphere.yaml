@@ -1,4 +1,0 @@
-docker.io:
-  images:
-    labring/kubesphere: []
-  tls-verify: false

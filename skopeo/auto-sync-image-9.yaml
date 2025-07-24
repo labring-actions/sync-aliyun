@@ -1,8 +1,0 @@
-docker.io:
-  images:
-    labring/bitnami-mongodb-sharded: []
-    labring/crunchy-postgres-operator: []
-    labring/mongodb-community-operator: []
-    labring/tomcat: []
-    labring/traefik: []
-  tls-verify: false

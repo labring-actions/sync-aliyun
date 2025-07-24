@@ -1,8 +1,0 @@
-docker.io:
-  images:
-    labring/calicoctl: []
-    labring/cni-plugins: []
-    labring/helm-dashboard: []
-    labring/kube-router: []
-    labring/kubeblocks-csi-s3: []
-  tls-verify: false
