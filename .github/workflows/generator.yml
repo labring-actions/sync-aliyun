@@ -31,7 +31,7 @@ jobs:
             🤖 add workflow change for images.
           branch: workflow
           base: main
-          signoff: true
+          signoff: false
           delete-branch: true
           reviewers: cuisongliu
           branch-suffix: short-commit-hash
