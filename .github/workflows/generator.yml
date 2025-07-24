@@ -32,3 +32,6 @@ jobs:
           reviewers: cuisongliu
           branch-suffix: short-commit-hash
           labels: sync-images
+          token: ${{ secrets.G_TOKEN }}
+          committer: sealos-ci-robot <sealos-ci-robot@sealos.io>
+          author: sealos-ci-robot <sealos-ci-robot@sealos.io>
