@@ -1,8 +1,0 @@
-docker.io:
-  images:
-    labring/eck-operator: []
-    labring/fluent-bit: []
-    labring/fluent-operator-containerd: []
-    labring/nginx: []
-    labring/rocketmq-operator: []
-  tls-verify: false

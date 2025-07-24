@@ -1,8 +1,0 @@
-docker.io:
-  images:
-    labring/containerd-shim-wasmedge: []
-    labring/containerd-shim-wasmtime: []
-    labring/dapr: []
-    labring/dapr-dashboard: []
-    labring/runwasi-wasmedge: []
-  tls-verify: false

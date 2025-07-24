@@ -1,8 +1,0 @@
-docker.io:
-  images:
-    labring/bitnami-thanos: []
-    labring/kubean: []
-    labring/prometheus-blackbox-exporter: []
-    labring/prometheus-node-exporter: []
-    labring/prometheus-operator: []
-  tls-verify: false

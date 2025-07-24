@@ -1,8 +1,0 @@
-docker.io:
-  images:
-    labring/bitnami-fluentd: []
-    labring/kafka-ui: []
-    labring/openobserve: []
-    labring/prometheus: []
-    labring/vector-operator: []
-  tls-verify: false

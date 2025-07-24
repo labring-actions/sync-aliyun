@@ -1,7 +1,0 @@
-docker.io:
-  images:
-    labring/sealos-patch:
-    - latest
-  images-by-tag-regex:
-    labring/sealos-patch: ^v.*
-  tls-verify: false

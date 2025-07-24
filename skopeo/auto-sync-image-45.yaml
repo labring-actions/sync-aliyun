@@ -1,4 +1,0 @@
-docker.io:
-  images:
-    labring/terminal: []
-  tls-verify: false

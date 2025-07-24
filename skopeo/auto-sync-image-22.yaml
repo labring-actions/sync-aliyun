@@ -1,8 +1,0 @@
-docker.io:
-  images:
-    labring/bond-cni: []
-    labring/openim: []
-    labring/podman: []
-    labring/zot: []
-    labring/zot-upload: []
-  tls-verify: false
