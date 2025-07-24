@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/chatbot-ui: []
+    labring/containerd-shim-wasmer: []
+    labring/operator-lifecycle-manager: []
+    labring/spinnaker: []
+    labring/spinnaker-operator: []
+  tls-verify: false

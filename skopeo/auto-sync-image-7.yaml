@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/jenkins: []
+    labring/kubevirt: []
+    labring/oracle-mysql-operator: []
+    labring/velero: []
+    labring/zalando-postgres-operator: []
+  tls-verify: false

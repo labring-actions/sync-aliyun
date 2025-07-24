@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/golang-vim-dev: []
+    labring/kube-ovn: []
+    labring/longhorn: []
+    labring/tekton: []
+    labring/tidb-operator: []
+  tls-verify: false

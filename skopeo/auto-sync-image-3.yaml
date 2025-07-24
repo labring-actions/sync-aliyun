@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/flannel: []
+    labring/kube-prometheus-stack: []
+    labring/minio: []
+    labring/redis-exporter: []
+    labring/skywalking: []
+  tls-verify: false

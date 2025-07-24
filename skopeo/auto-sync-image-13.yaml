@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/code-server: []
+    labring/contour: []
+    labring/harbor: []
+    labring/memcached: []
+    labring/nfs-subdir-external-provisioner: []
+  tls-verify: false
