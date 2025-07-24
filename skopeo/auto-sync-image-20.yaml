@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/bitnami-minio: []
+    labring/ceph-csi-cephfs: []
+    labring/ceph-csi-rbd: []
+    labring/kubernetes-reflector: []
+    labring/telepresence: []
+  tls-verify: false

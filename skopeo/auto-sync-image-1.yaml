@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/calico: []
+    labring/cert-manager: []
+    labring/elastic: []
+    labring/mysql-operator: []
+    labring/redis-operator: []
+  tls-verify: false

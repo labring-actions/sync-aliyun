@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/etcdctl: []
+    labring/helmfile: []
+    labring/karmada: []
+    labring/neuvector: []
+    labring/registry: []
+  tls-verify: false

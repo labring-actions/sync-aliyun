@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/enovy-gateway: []
+    labring/iomesh: []
+    labring/kubectl-df-pv: []
+    labring/teleport: []
+    labring/uptime-kuma: []
+  tls-verify: false
