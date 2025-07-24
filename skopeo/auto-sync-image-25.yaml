@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/discourse: []
+    labring/grafana: []
+    labring/grafana-operator: []
+    labring/promtail: []
+    labring/sonarqube: []
+  tls-verify: false

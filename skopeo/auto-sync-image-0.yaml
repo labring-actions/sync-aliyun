@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/coredns: []
+    labring/helm: []
+    labring/ingress-nginx: []
+    labring/minio-operator: []
+    labring/openebs: []
+  tls-verify: false

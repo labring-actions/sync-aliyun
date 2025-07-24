@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/awx-operator: []
+    labring/chaos-mesh: []
+    labring/chaos-mesh-containerd: []
+    labring/multus-cni: []
+    labring/openebs-mayastor: []
+  tls-verify: false

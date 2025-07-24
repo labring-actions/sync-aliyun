@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/affine: []
+    labring/kubevela: []
+    labring/kustomize: []
+    labring/trivy-operator: []
+    labring/weave-gitops: []
+  tls-verify: false

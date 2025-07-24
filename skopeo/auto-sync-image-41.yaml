@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/kubeblocks-apecloud-mysql: []
+    labring/kubeblocks-kafka: []
+    labring/kubeblocks-mongodb: []
+    labring/kubeblocks-postgresql: []
+    labring/stakater-reloader: []
+  tls-verify: false

@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/gpu-operator: []
+    labring/k8tz: []
+    labring/kafka-exporter: []
+    labring/kafka-operator: []
+    labring/metrics-server: []
+  tls-verify: false
