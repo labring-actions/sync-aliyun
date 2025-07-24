@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/athenaserving: []
+    labring/clickhouse: []
+    labring/kubernetes-dashboard: []
+    labring/lvscare: []
+    labring/rook: []
+  tls-verify: false

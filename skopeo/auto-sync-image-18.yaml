@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/bitnami-redis-cluster: []
+    labring/kube-vip: []
+    labring/nerdctl: []
+    labring/openebs-lvm: []
+    labring/ot-redis-cluster: []
+  tls-verify: false

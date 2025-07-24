@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/csi-driver-nfs: []
+    labring/gitlab-operator: []
+    labring/higress: []
+    labring/skopeo: []
+    labring/zadig: []
+  tls-verify: false

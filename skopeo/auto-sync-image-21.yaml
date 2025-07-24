@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/bitnami-kafka: []
+    labring/bitnami-mysql: []
+    labring/bitnami-zookeeper: []
+    labring/kubeblocks: []
+    labring/mongodb-single: []
+  tls-verify: false

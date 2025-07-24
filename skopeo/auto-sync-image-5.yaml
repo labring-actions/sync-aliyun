@@ -1,0 +1,8 @@
+docker.io:
+  images:
+    labring/argocd: []
+    labring/cilium: []
+    labring/endpoints-operator: []
+    labring/istio: []
+    labring/metallb: []
+  tls-verify: false
