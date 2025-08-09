@@ -87,7 +87,16 @@ func fetchDockerHubAllRepo() (map[string]SkopeoList, error) {
 						}
 					}
 				} else if strings.HasPrefix(repo.Name, "sealos") {
-					if strings.HasPrefix(repo.Name, "sealos-cloud") {
+					if repo.Name == "sealos-cloud" {
+						versions[repo.Name] = SkopeoList{
+							defaultRegistryName: {
+								Images:           map[string][]string{repo.getName(): {"latest"}},
+								ImagesByTagRegex: map[string]string{repo.getName(): "^v.*"},
+								TLSVerify:        false,
+							},
+						}
+					}
+					if strings.HasPrefix(repo.Name, "sealos-cloud-") {
 						continue
 					}
 					if repo.Name == "sealos" || repo.Name == "sealos-patch" {

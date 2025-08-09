@@ -4,7 +4,7 @@
 repository="labring-actions/sync-aliyun"
 
 # 获取最新release的版本号
-latest_release=v1.19.5
+latest_release=v1.19.6
 # 构建下载链接
 download_url="https://github.com/$repository/releases/download/$latest_release/sync-aliyun_${latest_release#v}_linux_amd64.tar.gz"
 
